@@ -2,15 +2,15 @@
 \language "english"
 
 \include "includes/header-paper.ily"
-\include "includes/etude-op25-no2-parts.ily"
-
+\include "includes/etude-op25-no3-parts.ily"
 \paper {
+  ragged-right = ##f
   ragged-last-bottom = ##t
 }
 
 \score {
   \keepWithTag layout
-  \etudeTwoMusic
+  \etudeThreeMusic
 }
 
-\etudeTwoMidi
+\etudeThreeMidi

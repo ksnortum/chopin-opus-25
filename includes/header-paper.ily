@@ -1,7 +1,5 @@
 %...+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....
 
-%\version "2.22.2"
-
 #(set-global-staff-size 18)
 
 \header {
@@ -19,8 +17,8 @@
 }
 
 \paper {
-  ragged-right = ##f
-  ragged-last-bottom = ##f
+  ragged-right = ##f % change to ##f
+  ragged-last-bottom = ##f % change to ##f
   % min-systems-per-page = 5
   % page-breaking = #ly:minimal-breaking
 

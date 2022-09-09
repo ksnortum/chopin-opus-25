@@ -455,7 +455,6 @@ pedal = {
   s2\sustainOn s\sustainOff |
 }
 
-% Currently disabled
 forceBreaks = {
   \partial 4 s4
   \repeat unfold 4 { s1\noBreak s1 } \barNumberCheck 9
@@ -463,7 +462,13 @@ forceBreaks = {
   \repeat unfold 4 { s1\noBreak s1 } \barNumberCheck 25
   \repeat unfold 4 { s1\noBreak s1 } \barNumberCheck 33
   \repeat unfold 4 { s1\noBreak s1 } \barNumberCheck 41
-  \repeat unfold 3 { s1\noBreak s1 } 
+  s1\noBreak s1
+  s1\noBreak s1
+    \overrideProperty
+      Score
+      .NonMusicalPaperColumn
+      .line-break-system-details #'((extra-offset . (0 . 3)))
+  s1\noBreak s1
   s1\noBreak s1\noBreak
   
   \barNumberCheck 49
@@ -471,13 +476,13 @@ forceBreaks = {
 }
 
 etudeOneMusic = 
-  \new PianoStaff \with { instrumentName = \markup \huge "No. 1" } <<
+  \new PianoStaff \with { instrumentName = \markup \huge "No. 13" } <<
     \set PianoStaff.connectArpeggios = ##t
     \new Staff = "upper" \rightHand
     \new Dynamics \dynamics
     \new Staff = "lower" \leftHand
     \new Dynamics \pedal
-    % \new Devnull \forceBreaks
+    \new Devnull \forceBreaks
   >>
 
 etudeOneMidi = \book {

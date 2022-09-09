@@ -1,8 +1,5 @@
 %...+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....
 
-%\version "2.22.2"
-%\language "english"
-
 \include "global-variables.ily"
 
 %%% Positions and shapes %%%
@@ -323,69 +320,67 @@ dynamics = {
 pedal = {
   \partial 4 s4
   s1 * 4 |
-  s4..\sustainOn s16\sustainOff s2 |
+  s4..\sd s16\su s2 |
   s1 |
-  s2...\sustainOn s16\sustainOff |
+  s2...\sd s16\su |
   s1 |
   
   \barNumberCheck 9
   s1 * 2 |
-  \repeat unfold 3 { s2...\sustainOn s16\sustainOff | }
+  \repeat unfold 3 { s2...\sd s16\su | }
   s1 * 2 |
-  s4..\sustainOn s16\sustainOff s2 |
+  s4..\sd s16\su s2 |
   
   \barNumberCheck 17
-  s4..\sustainOn s16\sustainOff s2 |
-  s2\sustainOn s\sustainOff\sustainOn |
-  s16 s\sustainOff s8 s2. |
+  s4..\sd s16\su s2 |
+  s2\sd s\su\sd |
+  s16 s\su s8 s2. |
   s1 * 4 |
-  s2\sustainOn s16 s8.\sustainOff s4 |
+  s2\sd s16 s8.\su s4 |
   
   \barNumberCheck 25
   s1 |
-  s2\sustainOn s8 s4.\sustainOff |
+  s2\sd s8 s4.\su |
   s1 * 3 |
-  s2...\sustainOn s16\sustainOff |
+  s2...\sd s16\su |
   s1 |
-  s2...\sustainOn s16\sustainOff |
+  s2...\sd s16\su |
   
   \barNumberCheck 33
   s1 * 2 |
-  s4\sustainOn s8 s\sustainOff s2 |
-  s4\sustainOn s8 s\sustainOff s2 |
-  s2 s\sustainOn |
-  s4. s8\sustainOff s2 |
-  s4\sustainOn s8 s\sustainOff s2 |
-  s4\sustainOn s8 s\sustainOff s2 |
+  s4\sd s8 s\su s2 |
+  s4\sd s8 s\su s2 |
+  s2 s\sd |
+  s4. s8\su s2 |
+  s4\sd s8 s\su s2 |
+  s4\sd s8 s\su s2 |
   
   \barNumberCheck 41
-  \repeat unfold 3 {
-    s4\sustainOn s8 s\sustainOff s4\sustainOn s8 s\sustainOff |
-  }
+  \repeat unfold 3 { s4\sd s8 s\su s4\sd s8 s\su | }
   s1 * 3 |
-  s2\sustainOn s\sustainOff |
-  s2\sustainOn s\sustainOff |
+  s2\sd s\su |
+  s2\sd s\su |
   
   \barNumberCheck 49
-  s2\sustainOn s\sustainOff |
+  s2\sd s\su |
   s1 * 5 |
-  s4\sustainOn s8 s\sustainOff s2 |
+  s4\sd s8 s\su s2 |
   s1 |
   
   \barNumberCheck 57
-  s2\sustainOn s8 s\sustainOff s4 |
+  s2\sd s8 s\su s4 |
   s1 * 3 |
-  s2\sustainOn s\sustainOff |
-  s2...\sustainOn s16\sustainOff |
-  s2...\sustainOn s16\sustainOff |
-  s2\sustainOn s\sustainOff |
+  s2\sd s\su |
+  s2...\sd s16\su |
+  s2...\sd s16\su |
+  s2\sd s\su |
   
   \barNumberCheck 65
-  s2...\sustainOn s16\sustainOff |
-  s4\sustainOn s8 s\sustainOff s2 |
-  s4\sustainOn s8 s\sustainOff s2 |
-  s1\sustainOn |
-  s2 s\sustainOff |
+  s2...\sd s16\su |
+  s4\sd s8 s\su s2 |
+  s4\sd s8 s\su s2 |
+  s1\sd |
+  s2 s\su |
 }
 
 forceBreaks = {
@@ -400,7 +395,7 @@ etudeTwoHeader = \header {
 }
 
 etudeTwoMusic = 
-  \new PianoStaff \with { instrumentName = \markup \huge "No. 2" } <<
+  \new PianoStaff \with { instrumentName = \markup \huge "No. 14" } <<
     \set PianoStaff.connectArpeggios = ##t
     \new Staff = "upper" \rightHand
     \new Dynamics \dynamics

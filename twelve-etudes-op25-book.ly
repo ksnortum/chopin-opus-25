@@ -9,6 +9,7 @@
 \include "includes/title-page.ily"
 \include "includes/etude-op25-no1-parts.ily"
 \include "includes/etude-op25-no2-parts.ily"
+\include "includes/etude-op25-no3-parts.ily"
 
 %%% ------------------
 %%% Construct the book
@@ -29,24 +30,36 @@
 }
 
 \tocItem \markup { 
-  \concat { "Etude No. 1 in A" \raise #0.75 \teeny \flat " major" }
+  \concat { "Etude No. 13 in A" \raise #0.75 \teeny \flat " major" }
 }
 \score {
+  \header {
+    opus = "Opus 15, No 1"
+  }
   \keepWithTag layout
   \etudeOneMusic
 }
 
 \tocItem \markup { 
-  "Etude No. 2 in F minor"
+  "Etude No. 14 in F minor"
 }
 \score {
   \header {
-    title = ##f
-    composer = ##f
-    opus = ##f
-  }
+      opus = "Opus 15, No 2"
+    }
   \keepWithTag layout
   \etudeTwoMusic
+}
+
+\tocItem \markup { 
+  "Etude No. 15 in F major"
+}
+\score {
+  \header {
+    opus = "Opus 15, No 3"
+  }
+  \keepWithTag layout
+  \etudeThreeMusic
 }
 
 %%% ----
@@ -55,3 +68,4 @@
 
 \etudeOneMidi
 \etudeTwoMidi
+\etudeThreeMidi
