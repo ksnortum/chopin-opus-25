@@ -2,11 +2,12 @@
 \language "english"
 
 \include "includes/header-paper.ily"
-\include "includes/etude-op25-no2-parts.ily"
+\include "includes/etude-op25-no4-parts.ily"
 
 \paper {
+  ragged-right = ##t  % remove
   ragged-last-bottom = ##t
 }
 
-\etudeTwoMusic
-\etudeTwoMidi
+\etudeFourMusic
+\etudeFourMidi

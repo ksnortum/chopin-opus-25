@@ -1,4 +1,4 @@
-\version "2.23.12"
+\version "2.23.13"
 \language "english"
 
 \include "includes/header-paper.ily"
@@ -8,9 +8,5 @@
   ragged-last-bottom = ##t
 }
 
-\score {
-  \keepWithTag layout
-  \etudeOneMusic
-}
-
+\etudeOneMusic
 \etudeOneMidi

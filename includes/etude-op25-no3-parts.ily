@@ -37,6 +37,8 @@ ssf = \shape #'((0 . 0) (0 . 0) (0 . 0) (0 . -0.5)) \etc
 ssg = \shape #'((0 . 0) (0 . 0) (0 . 0) (0 . 0.25)) \etc
 ssh = \shape #'((0 . 0) (0 . 0) (0 . 0) (0 . -1)) \etc
 ssi = \shape #'((0 . 0) (0 . 0) (0 . 0) (0 . -0.25)) \etc
+ssj = \shape #'((0 . 0) (0 . -1) (0 . -1) (0 . -2)) \etc
+ssk = \shape #'((0 . 0) (0 . 0.25) (0 . 0.25) (0 . 0)) \etc
 
 %%% Music %%%
 
@@ -148,6 +150,7 @@ rightHandUpper = \relative {
   g16-\spa ([ fs8.*1/3] \ohn b8)
     g16-\spa ([ fs8.*1/3] \ohn as8)
     gs16([ fs8.*1/3] \ohn as8) |
+  \bar "||"
   \key b \major
   gs16([-3^\aTempo fs8.*1/3] \ohn b8)
     cs,16([ b8.*1/3] \ohn fs'8)
@@ -170,7 +173,7 @@ rightHandUpper = \relative {
     ds,16-\spb ([ cs8.*1/3] \ohn fs8)
     gs16-\ssg ([ fs8.*1/3] \ohn cs'8) |
   gs16([ fs8.*1/3] \ohn ds'8)
-    gs,16([ fs8.*1/3] \ohn ds'8)
+    as16-\ssf ([ gs8.*1/3] \ohn ds'8)
     gs,16([ fs8.*1/3] \ohn cs'8) |
   gs16([ fs8.*1/3] \ohn b8)
     gs'16-\ssf ([ fs8.*1/3] \ohn b8)
@@ -221,8 +224,8 @@ rightHandUpper = \relative {
     g,16-\ssh ([ f] \ohn c'8)  
     d16-\ssh ([ c] \ohn f8) |
   d16-\ssi ([ c] \ohn g'8)  
-    g,16-\ssh ([ f] \ohn c'8)  
-    d16-\ssi ([ c] \ohn g'8) |
+    a,16-\ssj ([ g] \ohn c'8)  
+    d,16-\ssi ([ c] \ohn g'8) |
   d16([ c] \ohn a'8)  
     d,16-\ssh ([ c] \ohn f8)  
     a16-\ssi ([ g] \ohn d'8) |
@@ -233,7 +236,7 @@ rightHandUpper = \relative {
     g,16-\ssh ([ f] \ohn c'8)  
     d16-\ssh([ c] \ohn f8) |
   d16-\ssi ([ c] \ohn g'8)  
-    g,16-\ssh ([ f] \ohn c'8)  
+    a,16-\ssi ([ g] \ohn c8)  
     d16-\ssi ([ c] \ohn g'8) |
   d16([ c] \ohn a'8)  
     e16-\ssi ([ d] \ohn a'8)  
@@ -281,8 +284,8 @@ rightHandUpper = \relative {
   \moveFingerB g32[-1-3 \revertFingerB f g f]  g[ f g f]  g[ f g f]  g[ f g f]
     g[ f g f]  g[ f g f] |
   \oneVoice
-  <c f>8.(\trill e16-1  f32[ gs bf a-1]  b[ d c-1 e] \ottava 1
-    g[ f-1 gs bf]  a[ b d c] |
+  <c f>8.-\ssk (\trill e16-1  f32[ gs bf a-1]  b[ d c-1 e] \ottava 1
+    g[ f-1 gs bf]  a-1[ b d c] |
   f4) \ottava 0 r <a,,,, c a'>( |
   <a f' a>2. |
   q2.)\fermata |
@@ -366,7 +369,7 @@ rightHandLower = \relative {
   
   \barNumberCheck 57
   c,8 c'^. c c'^. c, c'^. |
-  c,8 c'^. c,, c'^. c, c'^> |
+  c,8 c'^. c,, c'^> c, c'^> |
   c,8 c'^> c c'^> c, c'^> |
   c,8 c'^> b, b'^. b, b'^. |
   a,8 a'^. a, a'^. g, g'^. |
@@ -745,7 +748,7 @@ dynamics = {
 
 pedal = {
   \partial 4 s4
-  \repeat unfold 3 { s8\sd s\su s\sd s\su s8.\sd s16\su | }
+  \repeat unfold 3 { s8\sd s\su s\sd s\su s\sd s\su | }
   s2\sd s8. s16\su |
   s2. * 2 |
   s8\sd s\su s\sd s\su s8.\sd s16\su |
@@ -796,24 +799,18 @@ pedal = {
   s2 s4\su |
 }
 
-forceBreaks = {
-  \partial 4 s4
-  s2.
-    \overrideProperty
-      Score
-      .NonMusicalPaperColumn
-      .line-break-system-details #'((extra-offset . (0 . 1)))
-  s2.\noBreak s2.\normalsize s2.\break
-}
-
-etudeThreeMusic = 
+etudeThreeMusic = \score {
+  \header {
+    opus = "Opus 15, No 3"
+  }
+  \keepWithTag layout
   \new PianoStaff \with { instrumentName = \markup \huge "No. 15" } <<
     \new Staff = "upper" \rightHand
     \new Dynamics \dynamics
     \new Staff = "lower" \leftHand
     \new Dynamics \pedal
-    \new Devnull \forceBreaks
   >>
+}
 
 etudeThreeMidi = \book {
   \bookOutputName "etude-op25-no3"

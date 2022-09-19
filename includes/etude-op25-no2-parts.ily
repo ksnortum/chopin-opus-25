@@ -394,7 +394,11 @@ etudeTwoHeader = \header {
   opus = "Opus 25, No 2"
 }
 
-etudeTwoMusic = 
+etudeTwoMusic = \score {
+  \header {
+      opus = "Opus 15, No 2"
+  }
+  \keepWithTag layout
   \new PianoStaff \with { instrumentName = \markup \huge "No. 14" } <<
     \set PianoStaff.connectArpeggios = ##t
     \new Staff = "upper" \rightHand
@@ -403,6 +407,7 @@ etudeTwoMusic =
     \new Dynamics \pedal
     \new Devnull \forceBreaks
   >>
+}
 
 etudeTwoMidi = \book {
   \bookOutputName "etude-op25-no2"

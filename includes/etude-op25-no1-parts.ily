@@ -1,8 +1,5 @@
 %...+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....
 
-%\version "2.22.2"
-%\language "english"
-
 \include "global-variables.ily"
 
 %%% Positions and shapes %%%
@@ -475,7 +472,11 @@ forceBreaks = {
   s1
 }
 
-etudeOneMusic = 
+etudeOneMusic = \score {
+  \header {
+    opus = "Opus 15, No 1"
+  }
+  \keepWithTag layout
   \new PianoStaff \with { instrumentName = \markup \huge "No. 13" } <<
     \set PianoStaff.connectArpeggios = ##t
     \new Staff = "upper" \rightHand
@@ -484,6 +485,7 @@ etudeOneMusic =
     \new Dynamics \pedal
     \new Devnull \forceBreaks
   >>
+}
 
 etudeOneMidi = \book {
   \bookOutputName "etude-op25-no1"

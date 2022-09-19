@@ -51,3 +51,6 @@ pMoltoLegato = \markup {
 }
 pocoAPocoCresc = \makeSpanner \markup \large \italic "poco a poco cresc."
 sempreP = \markup { \large \italic "sempre" \dynamic p }
+legato = \markup \large \italic "legato"
+stacc = \markup \large \italic "staccato"
+ppPocoRiten = \markup { \dynamic pp \large \italic "poco riten." }
