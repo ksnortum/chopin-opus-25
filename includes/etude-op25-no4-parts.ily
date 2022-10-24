@@ -5,6 +5,12 @@
 %%% Positions and shapes %%%
 
 lengthenTieA = \tweak minimum-length 4 \etc
+lengthenArp = 
+  \tweak positions #'(-3 . 1) 
+  \tweak extra-spacing-width #'(-1 . 0)
+  \tweak X-offset -1
+  \tweak vertical-skylines ##f
+  \etc
 
 %%% Music %%%
 
@@ -60,7 +66,35 @@ rightHandUpper = \relative {
   s4. c2->( b8~ |
   
   \barNumberCheck 41
-  b8 a)
+  b8 a) s2. |
+  s1 * 5 |
+  s4. a2( gs8~ |
+  gs8 a4) c2( b8~ |
+  
+  \barNumberCheck 49
+  b8 a4) e'( d e8~ |
+  e8 c4 b a4.) |
+  s8 b4( a e a8~ |
+  a8 b4 a e g8->) |
+  s8 gf4->( f-> d-> b8->) |
+  s8 a2..->(~ |
+  a4. e'4 d b8~ |
+  b8 a2..~ |
+  
+  \barNumberCheck 57
+  a4.) e'4( a gs8-\lengthenTieA ~ |
+  gs8 g4 fs f b,8~ |
+  b8 a4) f( <bf d> b8~ |
+  b8 <c, a'>4) <e a e'>( <f bf d> <d gs>8->~
+  gs8 a2) c4( bf8~ |
+  bf8 a2)^\rall c4( bf8) |
+  \tempo "Lento"
+  \acciaccatura { d,8-\lengthenArp \arpeggio } bf'1(~ |
+  bf2 d4 cs |
+  
+  \barNumberCheck 65
+  <cs, e a>1)\arpeggio \fermata |
+  \bar "|."
 }
 
 rightHandLower = \relative {
@@ -119,9 +153,40 @@ rightHandLower = \relative {
   }
   g8\rest <e g> g\rest <f gs> g\rest <fs a> g\rest <e g> |
   g8\rest <e a> g\rest <a e'> g\rest <a d> g\rest <gs e'> |
-  b\rest <a e'>^. b\rest <c e> b\rest <c f> b\rest <b f'> |
+  b8\rest <a e'>^. b\rest <c e> b\rest <c f> b\rest <b f'> |
   
   \barNumberCheck 41
+  g8\rest <a f'> \oneVoice r <e' a e'>-^ r <d a' d>-^ r <e gs e'>-^ |
+  r8 <c e c'>-^ r <gs e' gs>-^ r <a e' a>-^ r <c e c'>-^ |
+  r8 <b e b'>-^ r <a e' a>-^ r <e b' e>^^ r <a e' a>-^ |
+  r8 <b e b'>-^ r <a e' a>-^ r <e b' e>^^ r <a e' a>-^ |
+  r8 <b e b'>-^ r <c e c'>-^ r <g b g'>-^ r <a b fs'>-^ |
+  r8 <gs b e>-^ r <a c fs>-^ r <g b f' g>-^ r <gs d' e gs>-^ |
+  r8 <a c e a>-^ r \voiceTwo <a e'> b\rest <a d> b\rest <gs e'> |
+  b8\rest <a e'> b\rest <c e> b\rest <c f> b\rest <b f'> |
+  
+  \barNumberCheck 49
+  b8\rest <a f'> b\rest <e a> b\rest <d a'> b\rest <e gs> |
+  b8\rest <c e> b\rest <b e> b\rest <a e'> b\rest <c e> |
+  b8\rest <b e> b\rest <a e'> b\rest <e, b'> b'\rest <a e'> |
+  b8\rest <b e> b\rest <a e'> b\rest <e, b'> b'\rest <g bf> |
+  b8\rest <gf bf> b\rest <f bf> b\rest <f bf> b\rest <d, gs> |
+  b'8\rest c, e\rest <d f> e\rest <c e> e\rest <d f> |
+  e8\rest <c e>4 <e a> <f bf> <d gs>8~ |
+  q8 c e\rest <d f> e\rest <c e> e\rest <d f> |
+  
+  \barNumberCheck 57
+  c8\rest <c e> e\rest <e a> b'\rest <a ds> b\rest <gs e'> |
+  g8\rest <g cs> g\rest <fs d'> g\rest <f bf> g\rest <d gs> |
+  e8\rest <c e> e\rest d2 <d gs>8~ |
+  q8 s s2 s8 \hideNotes d~ \unHideNotes |
+  d8 c c\rest <d f> c\rest <c e> c\rest <d f> |
+  c8\rest <c e> c\rest <d f> c\rest <c e> c\rest <d f> |
+  <d f>1~ |
+  q1 |
+  
+  \barNumberCheck 65
+  s1 |
 }
 
 rightHand = <<
@@ -186,6 +251,38 @@ leftHand = \relative {
   c,8-. <a' e'>-. a,-. <a' e'>-. b,-. <f' d'>-. e-. <b' e>-. |
   
   \barNumberCheck 41
+  c,8-. <a' f'>-. c,-. <a' e'>-. b,-. <f' d'>-. e,-. <e' b' d>-. |
+  a,8-. <e' c'>-. b-. <e d'>-. c-. <e e'>-. a,-. <e' c'>-. |
+  e,8-. <e' d'>-. a,-. <e' c'>-. b-. <e gs d'>-. a,-. <e' a c>-. |
+  e,8-. <e' d'>-. a,-. <e' a c>-. b-. <e gs d'>-. a,-. <e' a c>-. |
+  g,8-. <g' e'>-. a,-. <a' e'>-. b,-. <b' e>-. b,-. <b' ds>-. |
+  e,8-. <b' e>-. ds,-. <c' fs>-. d,-. <b' f'>-. e,,-. <b'' e>-. |
+  a,8-. <a' e'>-. c,-. <a' e'>-. b,-. <f' d'>-. e-. <b' e>-. |
+  c,8-. <a' e'>-. a,-. <a' e'>-. d,-. <a' f'>-. d,-. <gs f'>-. |
+  
+  \barNumberCheck 49
+  c,8-. <a' f'>-. c,-. <a' e'>-. b,-. <f' d'>-. e,-. <e' b' d>-. |
+  a,8-. <e' a c>-. b-. <e gs d'>-. c-. <e a e'>-. a,-. <e' a c>-. |
+  e,8-. <e' d'>-. a,-. <e' c'>-. b-. <e gs d'>-. a,-. <e' a c>-. |
+  e,8-. <e' d'>-. a,-. <e' c'>-. b-. <e d'>-. cs-. <bf' e>-. |
+  \stemDown
+  d,8-. <bf' d>-. f-. <bf d>-. d,,-. <f' bf>-. e,-. <e' b'>-. |
+  a,8-. <e' a>-. d-. <f a>-. a,-. <e' a>-. d-. <f a>-. |
+  a,8-. <e' a>-. c,-. <e' a>-. d,-. <f' bf>-. e,-. <e' b'>-. |
+  a,8-. <e' a>-. d-. <f a>-. a,-. <e' a>-. d-. <f a>-. |
+  
+  \barNumberCheck 57
+  a,8-. <e' a>-. c-. <e c'>-. b-. <b' fs'>-. e,-. <b' e> |
+  a,8-. <a' e'>-. d,-. <a' d>-. d,,-. <f' bf>-. e,-. <e' b'>-. |
+  a,8-. <e' a>-. d-. <f a>-. d,-. <f' bf>-. e,-. <e' b'>-. |
+  f,8-. <f' a>-. c,-. <c' a'>-. d,-. <d' bf'>-. e,-. <e' b'>-. |
+  a,8-. <e' a>-. d-. <f a>-. a,-. <e' a>-. d-. <f a>-. |
+  a,8-. <e' a>-. d-. <f a>-. a,-. <e' a>-. a,( <d bf'>) |
+  <a~ d f~ bf>1->\arpeggio |
+  <a f'>1 |
+  
+  \barNumberCheck 65
+  <a e' a>1\arpeggio \fermata |
 }
 
 dynamics = {
@@ -232,6 +329,31 @@ dynamics = {
   s4. s8\> s4. s8\! |
   
   \barNumberCheck 41
+  s4 s2\< s8 s\! |
+  s2\> s8 s\! s4 |
+  s1 |
+  s4. s8\< s2 |
+  s8 s\! s s\> s4. s8\! |
+  s2..\< s8\! |
+  s4. s8\> s4. s8\! |
+  s4. s8\> s4. s8\! |
+  
+  \barNumberCheck 49
+  s4. s8\< s4. s8\! |
+  s8 s\> s4. s8\! s4 |
+  s1 |
+  s4 s2\< s8 s\! |
+  s4. s8\> s4. s8\! |
+  s1\p |
+  s4.\pp s8\> s4. s8\! |
+  s1 |
+  
+  \barNumberCheck 57
+  s4 s2\f\< s8 s\! |
+  s8 s\> s4. s8\! s4 |
+  s1 * 2 |
+  s4. s8\dim s2 |
+  s2.. s8\! |
 }
 
 pedal = {
@@ -240,16 +362,22 @@ pedal = {
   
   \barNumberCheck 9
   \repeat unfold 4 { s4 s\sd s2\su | }
+  s4\sd \override SustainPedal.Y-offset = 1 s\su s\sd s\su |
+  \revert SustainPedal.Y-offset
+  s4\sd \override SustainPedal.Y-offset = 1 s\su s\sd s\su |
+  \revert SustainPedal.Y-offset
+  s8\sd \override SustainPedal.Y-offset = 1 s\su s\sd s\su s\sd s\su s\sd 
+    s\su |
   s4\sd s\su s\sd s\su |
-  s4\sd s\su s\sd s\su |
-  s8\sd s\su s\sd s\su s\sd s\su s\sd s\su |
-  s4\sd s\su s\sd s\su |
+  \revert SustainPedal.Y-offset
   
   \barNumberCheck 17
   s8\sd s\su s\sd s\su s\sd s\su s\sd s\su |
   s1 |
+  \override SustainPedal.Y-offset = 1
   s4.\sd s8\su s2\sd |
   s2 s8 s\su s4 |
+  \revert SustainPedal.Y-offset
   s4.\sd s8\su s2\sd |
   s2 s8 s\su s4 |
   s4\sd s\su s\sd s8 s\su |
@@ -264,16 +392,67 @@ pedal = {
   s4\sd s\su s\sd s\su |
   
   \barNumberCheck 33
-  s8\sd s\su s\sd s\su s\sd s\su s\sd s\su |
-  s4\sd s2\su s8.\sd s16\su |
+  s8\sd s\su s\sd s\su s\sd s\su s\sd 
+    \override SustainPedal.Y-offset = 2 s\su |
+  s4\sd s2\su \revert SustainPedal.Y-offset s8.\sd 
+    \override SustainPedal.Y-offset = 2 s16\su |
   s8\sd s\su s4 s\sd s\su |
   s4\sd s\su s\sd s\su |
   s4\sd s2.\su |
-  s8\sd s\su s\sd s\su s\sd s\su s\sd s\su |
+  s8\sd s\su s\sd s\su s\sd s\su \revert SustainPedal.Y-offset s\sd s\su |
+  \override SustainPedal.Y-offset = 2
   s8\sd s\su s4\sd s2\su |
   s4 s\sd s\su s |
   
   \barNumberCheck 41
+  s4 s\sd s\su s |
+  \override SustainPedal.Y-offset = 1
+  s8\sd s\su s\sd s\su s\sd s\su s\sd s\su |
+  \revert SustainPedal.Y-offset
+  s4\sd \override SustainPedal.Y-offset = 1 s\su s\sd s\su |
+  \revert SustainPedal.Y-offset
+  s4\sd \override SustainPedal.Y-offset = 1 s\su s\sd s\su |
+  s8\sd s\su s\sd s\su s\sd s\su s\sd s\su |
+  s8\sd s\su s\sd s\su s\sd s\su \revert SustainPedal.Y-offset s\sd 
+    \override SustainPedal.Y-offset = 2 s\su |
+  s4 s\sd s\su s |
+  s4 s\sd s\su s |
+  \revert SustainPedal.Y-offset
+  
+  \barNumberCheck 49
+  s1 * 3 |
+  s2. s8\sd s\su |
+  s2 s8\sd s\su s\sd \override SustainPedal.Y-offset = 2 s\su |
+  s8\sd s\su s4 s8\sd s\su s4 |
+  s8\sd s\su \revert SustainPedal.Y-offset s\sd s\su s\sd s\su s\sd s\su |
+  \override SustainPedal.Y-offset = 2
+  s4\sd s\su s\sd s\su |
+  
+  \barNumberCheck 57
+  s2 s8\sd s\su s\sd s\su |
+  s8\sd s\su \revert SustainPedal.Y-offset s4 s8\sd s\su s\sd 
+    \override SustainPedal.Y-offset = 2 s\su |
+  s8\sd s\su \revert SustainPedal.Y-offset s4 s8\sd s\su s\sd s\su |
+  s8\sd s\su s\sd s\su s\sd s\su s\sd s\su |
+  s4\sd s2.\su |
+  s2. s4\sd |
+  s1 |
+  s2.. s8\su |
+  
+  \barNumberCheck 65
+  s2\sd s2\su |
+}
+
+forceBreaks = {
+  \partial 4 s4\noBreak
+  \repeat unfold 4 { s1\noBreak s1\noBreak s1\noBreak s1\break } \pageBreak
+  \barNumberCheck 17
+  \repeat unfold 4 { s1\noBreak s1\noBreak s1\noBreak s1\break } \pageBreak
+  \barNumberCheck 33
+  \repeat unfold 4 { s1\noBreak s1\noBreak s1\noBreak s1\break } \pageBreak
+  \barNumberCheck 49
+  \repeat unfold 3 { s1\noBreak s1\noBreak s1\noBreak s1\break }
+  s1\noBreak s1\noBreak s1\noBreak s1\noBreak s1\pageBreak
 }
 
 etudeFourMusic = \score {
@@ -282,12 +461,11 @@ etudeFourMusic = \score {
   }
   \keepWithTag layout
   \new PianoStaff \with { instrumentName = \markup \huge "No. 16" } <<
-    % \set PianoStaff.connectArpeggios = ##t
     \new Staff = "upper" \rightHand
     \new Dynamics \dynamics
     \new Staff = "lower" \leftHand
     \new Dynamics \pedal
-    % \new Devnull \forceBreaks
+    \new Devnull \forceBreaks
   >>
 }
 

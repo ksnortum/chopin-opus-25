@@ -7,6 +7,7 @@
 makeSpanner =
 #(define-music-function (mrkup) (markup?)
   #{
+    \override TextSpanner.Y-offset = -0.25
     \override TextSpanner.bound-details.left.text = #mrkup
     \override TextSpanner.bound-details.left.stencil-align-dir-y = 0.25
     \override TextSpanner.bound-details.left-broken.text = ##f
@@ -38,6 +39,7 @@ slashFlag = \once \override Flag.stroke-style = "grace"
 fingerThreeFive = \markup \finger \overtie 35
 ritenuto = \markup \large \italic "ritenuto"
 riten = \markup \large \italic "riten."
+pocoRiten = \markup \large \italic "poco riten."
 aTempo = \markup \large \italic "a tempo"
 appassionato = \markup \large \italic "appassionato"
 fzp = \markup \dynamic { fzp }
@@ -54,3 +56,13 @@ sempreP = \markup { \large \italic "sempre" \dynamic p }
 legato = \markup \large \italic "legato"
 stacc = \markup \large \italic "staccato"
 ppPocoRiten = \markup { \dynamic pp \large \italic "poco riten." }
+rall = \markup \large \italic "rall."
+pScherzando = \markup { 
+  \dynamic p \large \italic \whiteout \pad-markup #0.5 "scherzando" 
+}
+fg.1 = \markup \finger 1
+fg.2 = \markup \finger 2
+muDash = \markup "-"
+dolce = \markup \large \italic "dolce"
+sostMarkup = \markup \large \italic "sostenuto"
+conForza = \markup \large \italic \whiteout \pad-markup #0.5 "con forza"

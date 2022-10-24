@@ -1,4 +1,4 @@
-\version "2.23.13"
+\version "2.23.80"
 \language "english"
 
 %%% ------
@@ -11,6 +11,7 @@
 \include "includes/etude-op25-no2-parts.ily"
 \include "includes/etude-op25-no3-parts.ily"
 \include "includes/etude-op25-no4-parts.ily"
+\include "includes/etude-op25-no5-parts.ily"
 
 %%% ------------------
 %%% Construct the book
@@ -50,6 +51,11 @@
 }
 \etudeFourMusic
 
+\tocItem \markup {
+  "Etude No. 17 in E minor"
+}
+\etudeFiveMusic
+
 %%% ----
 %%% MIDI
 %%% ----
@@ -58,3 +64,4 @@
 \etudeTwoMidi
 \etudeThreeMidi
 \etudeFourMidi
+\etudeFiveMidi

@@ -1,5 +1,3 @@
-%\version "2.22.2"
-
 titlePage = \bookpart {
 
   \header {
@@ -11,18 +9,14 @@ titlePage = \bookpart {
     tagline = ##f
   }
 
-  \markup { \fill-line { \center-column {
-    \null \null \null \null
-    \null \null \null \null
-    \null \null \null \null
-    \null \null
-    \line { \abs-fontsize #36 \bold "12 Etudes" }
-    \null \null \null
-    \line { \abs-fontsize #20 "Opus 25" }
-    \null \null \null \null
+  \markup { \center-column {
+    \vspace #14
+    \fill-line { \abs-fontsize #36 \bold "12 Etudes" }
+    \vspace #3
+    \fill-line { \abs-fontsize #20 "Opus 25" }
+    \vspace #4
     \fill-line { \abs-fontsize #20 "by Frédéric Chopin" }
-    \null \null \null \null	
+    \vspace #4	
     \fill-line { \abs-fontsize #14 "for Piano"}
-    \null \null \null \null
-  } } } 
+  } } 
 }

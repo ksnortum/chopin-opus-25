@@ -17,19 +17,17 @@
 }
 
 \paper {
-  ragged-right = ##f % change to ##f
-  ragged-last-bottom = ##f % change to ##f
-  % min-systems-per-page = 5
-  % page-breaking = #ly:minimal-breaking
+  ragged-right = ##f
+  ragged-last-bottom = ##f
 
   markup-system-spacing = 
     #'((basic-distance . 1)
        (padding . 0.5)) % defaults: 1, 0.5
 
   system-system-spacing =
-    #'((basic-distance . 12) 
-       (minimum-distance . 8)
-       (padding . 1)
+    #'((basic-distance . 8) 
+       (minimum-distance . 4)
+       (padding . 2)
        (stretchability . 60)) % defaults: 12, 8, 1, 60
 
   last-bottom-spacing = 

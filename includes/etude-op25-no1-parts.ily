@@ -453,23 +453,18 @@ pedal = {
 }
 
 forceBreaks = {
-  \partial 4 s4
-  \repeat unfold 4 { s1\noBreak s1 } \barNumberCheck 9
-  \repeat unfold 4 { s1\noBreak s1 } \barNumberCheck 17
-  \repeat unfold 4 { s1\noBreak s1 } \barNumberCheck 25
-  \repeat unfold 4 { s1\noBreak s1 } \barNumberCheck 33
-  \repeat unfold 4 { s1\noBreak s1 } \barNumberCheck 41
-  s1\noBreak s1
-  s1\noBreak s1
-    \overrideProperty
-      Score
-      .NonMusicalPaperColumn
-      .line-break-system-details #'((extra-offset . (0 . 3)))
-  s1\noBreak s1
-  s1\noBreak s1\noBreak
-  
-  \barNumberCheck 49
-  s1
+  \partial 4 s4\noBreak
+  \repeat unfold 5 { s1\noBreak s1\break } \pageBreak 
+  \barNumberCheck 11
+  \repeat unfold 5 { s1\noBreak s1\break } \pageBreak 
+  \barNumberCheck 21
+  \repeat unfold 5 { s1\noBreak s1\break } \pageBreak 
+  \barNumberCheck 31
+  \repeat unfold 5 { s1\noBreak s1\break } \pageBreak 
+  \barNumberCheck 41
+  \repeat unfold 3 { s1\noBreak s1\break } 
+  \barNumberCheck 47
+  s1\noBreak s1\noBreak s1\pageBreak
 }
 
 etudeOneMusic = \score {
@@ -477,8 +472,10 @@ etudeOneMusic = \score {
     opus = "Opus 15, No 1"
   }
   \keepWithTag layout
-  \new PianoStaff \with { instrumentName = \markup \huge "No. 13" } <<
-    \set PianoStaff.connectArpeggios = ##t
+  \new PianoStaff \with { 
+    instrumentName = \markup \huge "No. 13" 
+    connectArpeggios = ##t
+  } <<
     \new Staff = "upper" \rightHand
     \new Dynamics \dynamics
     \new Staff = "lower" \leftHand

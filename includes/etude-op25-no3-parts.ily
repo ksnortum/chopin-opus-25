@@ -762,15 +762,17 @@ pedal = {
   s8\sd s\su s4..\sd s16\su |
   s8\sd s\su s\sd s\su s8.\sd s16\su |
   s8\sd s\su s4..\sd s16\su |
+  \override SustainPedal.Y-offset = 2
   s4.\sd s8\su s8.\sd s16\su |
   s8\sd s\su s4..\sd s16\su |
-  s4.\sd s8\su s8.\sd s16\su |
+  s4.\sd \revert SustainPedal.Y-offset s8\su s8.\sd s16\su |
   s8\sd s\su s4..\sd s16\su |
   
   \barNumberCheck 25
-  s8\sd s\su s\sd s\su s8.\sd s16\su |
+  s8\sd s\su \override SustainPedal.Y-offset = 2 s\sd s\su s8.\sd s16\su |
   s8\sd s\su s4..\sd s16\su |
   s4.\sd s8\su s8.\sd s16\su |
+  \revert SustainPedal.Y-offset
   \repeat unfold 3 { s8\sd s\su s\sd s\su s8.\sd s16\su | }
   s4.\sd s8\su s8.\sd s16\su |
   s2\sd s8. s16\su |
@@ -789,14 +791,42 @@ pedal = {
   s4.\sd s8\su s8.\sd s16\su |
   s8\sd s\su s\sd s\su s8.\sd s16\su |
   s4.\sd s8\su s8.\sd s16\su |
-  \repeat unfold 4 { s8\sd s\su s\sd s\su s8.\sd s16\su | }
+  s8\sd s\su s\sd s\su s8.\sd s16\su |
+  s8\sd s\su s\sd s\su s8.\sd s16\su |
+  s8\sd s\su \override SustainPedal.Y-offset = 2 s\sd s\su s8.\sd s16\su |
+  s8\sd s\su s\sd s\su s8.\sd s16\su |
   s4.\sd s8\su s8.\sd s16\su |
   
   \barNumberCheck 65
   s4.\sd s8\su s8.\sd s16\su |
+  \revert SustainPedal.Y-offset
   s2. * 5 |
   s2.\sd |
   s2 s4\su |
+}
+
+forceBreaks = {
+  \partial 4 s4\noBreak
+  s2.\noBreak s2.\noBreak s2.\break
+  s2.\noBreak s2.\noBreak s2.\noBreak s2.\break
+  s2.\noBreak s2.\noBreak s2.\break
+  s2.\noBreak s2.\noBreak s2.\pageBreak
+  \barNumberCheck 14
+  s2.\noBreak s2.\noBreak s2.\break
+  s2.\noBreak s2.\noBreak s2.\noBreak s2.\break
+  s2.\noBreak s2.\noBreak s2.\noBreak s2.\break
+  s2.\noBreak s2.\noBreak s2.\break
+  \barNumberCheck 28
+  s2.\noBreak s2.\noBreak s2.\break
+  \repeat unfold 3 { s2.\noBreak s2.\noBreak s2.\noBreak s2.\break } \pageBreak
+  \barNumberCheck 43
+  s2.\noBreak s2.\noBreak s2.\break
+  \repeat unfold 3 { s2.\noBreak s2.\noBreak s2.\noBreak s2.\break } \pageBreak
+  \barNumberCheck 58
+  s2.\noBreak s2.\noBreak s2.\noBreak s2.\break
+  s2.\noBreak s2.\noBreak s2.\noBreak s2.\break
+  s2.\noBreak s2.\noBreak s2.\break
+  s2.\noBreak s2.\noBreak s2.\noBreak s2.\pageBreak
 }
 
 etudeThreeMusic = \score {
@@ -809,6 +839,7 @@ etudeThreeMusic = \score {
     \new Dynamics \dynamics
     \new Staff = "lower" \leftHand
     \new Dynamics \pedal
+    \new Devnull \forceBreaks
   >>
 }
 
