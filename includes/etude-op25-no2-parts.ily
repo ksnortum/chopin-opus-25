@@ -451,7 +451,7 @@ etudeTwoHeader = \header {
 
 etudeTwoMusic = \score {
   \header {
-      opus = "Opus 15, No 2"
+      opus = "Opus 25, No 2"
   }
   \keepWithTag layout
   \new PianoStaff \with { instrumentName = \markup \huge "No. 14" } <<

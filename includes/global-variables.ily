@@ -30,6 +30,13 @@ textInsideSlur = \once {
   \override TextScript.outside-staff-priority = ##f
 }
 
+%%% This isn't working
+pedalInsideSlur = 
+  \tweak avoid-slur #'inside
+  \tweak outside-staff-priority ##f
+  \tweak Y-offset 4
+  \etc
+
 slashFlag = \once \override Flag.stroke-style = "grace"
 
 %
@@ -42,8 +49,9 @@ riten = \markup \large \italic "riten."
 pocoRiten = \markup \large \italic "poco riten."
 aTempo = \markup \large \italic "a tempo"
 appassionato = \markup \large \italic "appassionato"
-fzp = \markup \dynamic { fzp }
+fzp = \markup \dynamic fzp
 dimMarkup = \markup \large \italic "dim."
+diminMarkup = \markup \large \italic "dimin."
 smorzando = \markup \large \italic "smorzando"
 smorz = \markup \large \italic "smorz."
 leggierissimo = \markup \large \italic "leggierissimo"
@@ -66,3 +74,4 @@ muDash = \markup "-"
 dolce = \markup \large \italic "dolce"
 sostMarkup = \markup \large \italic "sostenuto"
 conForza = \markup \large \italic \whiteout \pad-markup #0.5 "con forza"
+sottoVoce = \markup \large \italic "sotto voce"

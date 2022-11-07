@@ -1034,7 +1034,7 @@ forceBreaks = {
 
 etudeFiveMusic = \score {
   \header {
-    opus = "Opus 15, No 5"
+    opus = "Opus 25, No 5"
   }
   \keepWithTag layout
   \new PianoStaff \with { instrumentName = \markup \huge "No. 17" } <<

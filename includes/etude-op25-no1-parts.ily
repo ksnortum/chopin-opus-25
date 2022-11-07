@@ -469,7 +469,7 @@ forceBreaks = {
 
 etudeOneMusic = \score {
   \header {
-    opus = "Opus 15, No 1"
+    opus = "Opus 25, No 1"
   }
   \keepWithTag layout
   \new PianoStaff \with { 

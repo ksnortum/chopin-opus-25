@@ -12,6 +12,7 @@
 \include "includes/etude-op25-no3-parts.ily"
 \include "includes/etude-op25-no4-parts.ily"
 \include "includes/etude-op25-no5-parts.ily"
+\include "includes/etude-op25-no6-parts.ily"
 
 %%% ------------------
 %%% Construct the book
@@ -56,6 +57,11 @@
 }
 \etudeFiveMusic
 
+\tocItem \markup { 
+  \concat { "Etude No. 18 in G" \raise #0.75 \teeny \sharp " minor" }
+}
+\etudeSixMusic
+
 %%% ----
 %%% MIDI
 %%% ----
@@ -65,3 +71,4 @@
 \etudeThreeMidi
 \etudeFourMidi
 \etudeFiveMidi
+\etudeSixMidi
