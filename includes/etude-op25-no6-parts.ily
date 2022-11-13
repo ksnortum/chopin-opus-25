@@ -4,18 +4,7 @@
 
 %%% Positions and shapes %%%
 
-ottavaMoveA = \offset Y-offset 3 \etc
-ottavaMoveB = \offset Y-offset 3 \etc
-ottavaMoveC = \offset Y-offset 2.5 \etc
-ottavaMoveD = \offset Y-offset 2.75 \etc
-ottavaMoveE = \offset Y-offset 3.25 \etc
-ottavaMoveF = \offset Y-offset 4 \etc
-ottavaMoveG = \offset Y-offset 2.75 \etc
-ottavaMoveH = \offset Y-offset 1.9 \etc
-ottavaMoveI = \offset Y-offset 3.25 \etc
-ottavaMoveJ = \offset Y-offset 2.5 \etc
-ottavaMoveK = \offset Y-offset 2.5 \etc
-ottavaMoveL = \alterBroken Y-offset #'(5.75 7 8.75) Staff.OttavaBracket
+clefMoveA = \once \override Staff.Clef.extra-spacing-width = #'(0 . 1)
 
 noteHShiftA = \tweak NoteColumn.force-hshift -1 \etc
 
@@ -31,6 +20,7 @@ pSlurShapeC = \shape #'(
                          ((0 . 0) (0 . -12) (0 . -10) (0 . 4))
                          ((0 . 0) (0 . 0.5) (0 . 1) (0 . -2))
                        ) \etc
+pSlurShapeD = \shape #'((0 . -2) (0 . 0) (0 . 1) (0 . -0.25)) \etc
 
 slurShapeA = \shape #'((0 . 3) (0 . 2) (0 . 0) (0 . 0)) \etc
 slurShapeB = \shape #'((0 . 0) (0 . 0.5) (0 . 0.5) (0 . 0)) \etc
@@ -44,7 +34,6 @@ slurShapeI = \shape #'((0 . 0) (0 . -0.5) (0 . -0.5) (0 . 0)) \etc
 slurShapeJ = \shape #'((0 . 3) (0 . 2) (0 . 0) (0 . 0)) \etc
 slurShapeK = \shape #'((0 . 0) (0 . -0.5) (0 . -0.5) (0 . 0)) \etc
 slurShapeL = \shape #'((0 . 0) (0 . 0) (0 . -1) (0 . -2)) \etc
-slurShapeM = \shape #'((0 . -2) (0 . 0) (0 . 1) (0 . -0.25)) \etc
 slurShapeN = \shape #'((0 . 0) (0 . -0.5) (0 . -0.5) (0 . 0)) \etc
 slurShapeO = \shape #'((0 . 0) (0 . 0) (0 . -0.5) (0 . -0.5)) \etc
 slurShapeP = \shape #'((0 . 0) (0 . 0) (0 . -1) (0 . -2)) \etc
@@ -54,6 +43,7 @@ slurShapeQ = \shape #'(
                       ) \etc
 slurShapeR = \shape #'((-1 . 3) (0 . 2) (0 . 2) (0 . 3)) \etc
 slurShapeS = \shape #'((0 . 0) (0 . 0) (0 . 1) (0 . -2)) \etc
+slurShapeT = \shape #'((0 . 0) (0 . 0) (0 . 0.5) (0 . 0)) \etc
 
 %%% Music %%%
 
@@ -67,8 +57,6 @@ rightHand = \relative {
   \clef treble
   \global
   \override Staff.Fingering.avoid-slur = #'inside
-  \override Staff.OttavaBracket.avoid-slur = #'inside
-  \override Staff.OttavaBracket.outside-staff-priority = ##f
   \tempo "Allegro" 2 = 69
   
   <b' ds>16-1-4-\pSlurShapeA \( <cs e>-2-5 
@@ -81,7 +69,7 @@ rightHand = \relative {
   <b ds>16-1-3 <cs e>-2-4 <css es>-1-5 <ds fs>-2-3  <dss fss>-1-4 <es gs>-1-3
     <fs a>-2-4 <fss as>-1-3  <gs b>-2-4 <gss bs>-1-5 <as cs>-2-3 
     <ass css>-1-4  <bs ds>-1-3 <cs e>-2-4 <css es>-1-5 <ds fs>-2-3 |
-  \ottavaMoveA \ottava 1 <dss fss>16-1-4 <es gs>-1-3 <fs a>-2-4 <fss as>-1-3  
+  \ottava 1 <dss fss>16-1-4 <es gs>-1-3 <fs a>-2-4 <fss as>-1-3  
     <gs b>8-2-4 \) \ottava 0 r r2 |
   <e, gs>16-1-4-\pSlurShapeB \( <fs a>-2-5 
     \repeat unfold 7 { <e gs> <fs a> } |
@@ -91,11 +79,11 @@ rightHand = \relative {
     
   \barNumberCheck 9
   <e gs>16-1-3 <fs a>-2-4 <fss as>-1-3 <gs b>-2-4  <gss bs>-1-5 <as cs>-2-3 
-    <b d>-1-4 <bs ds>-1-3  \ottavaMoveB \ottava 1 <cs e>-2-4 <d f>-1-5 
+    <b d>-1-4 <bs ds>-1-3  \ottava 1 <cs e>-2-4 <d f>-1-5 
     <ds fs>-2-3 <e g>-1-4  <es gs>-1-3 <fs a>-2-4 <fss as>-1-3 <gs b>-2-4 |
   <gss bs>16-1-5 <as cs>-2-3 <b d>-1-4 <bs ds>-1-3  <cs e>8-2-4\) \ottava 0
     r r2 |
-  \ottavaMoveC \ottava 1 <cs e>16_4_2-2-4( <b ds>_3_1-1-3 <as cs>_4_2-3-5 
+  \ottava 1 <cs e>16_4_2-2-4( <b ds>_3_1-1-3 <as cs>_4_2-3-5 
     <gs b>_3_1-2-4 <fss as>_4_2-1-3 <e gs>_3_1-1-2 <ds fss>_5_3-3-5 
     <cs e>_4_2-2-4 \ottava 0 <b ds>_3_1-1-3 <as cs>_4_2-3-5 <gs b>_3_1-2-4 
     <fss as>_4_2-1-3 <e gs>_3_1-1-2 <ds fss>_5_3-3-5 <cs e>_4_2-2-4 
@@ -108,7 +96,7 @@ rightHand = \relative {
   <as css>16-2-4( <b ds>-1-3 <cs e>-2-4 <css es>-1-5  <ds fs>-2-3 <dss fss>-2-4
     <es gs>-1-3 <fs a>-2-4  <fss as>-1-3 <gs b>-2-4 <a c>-1-5 <as cs>-2-3
     <b d>-1-4 <bs ds>-1-3 <cs e>-2-4 <css es>-1-5 |
-  <ds fs>8-2) r \ottavaMoveD \ottava 1 <b'' ds>16-1-3-\slurShapeS ( <cs e>-2-4 
+  <ds fs>8-2) r \ottava 1 <b'' ds>16-1-3-\slurShapeS ( <cs e>-2-4 
     <b ds>-1-3 <as cs>-2-4 <gs b>-1-3 <as cs> <gs b> <fs as>-2-4  <e gs>-1-3 
     <fs as> <e gs> <ds fs>-2-4 |
   \ottava 0 <cs e>16-1-3 <ds fs> <cs e> <b ds>-2-4  <as cs>-1-3 <b ds> <as cs>
@@ -140,19 +128,19 @@ rightHand = \relative {
     \ottava 0 r r4 |
   \bar "||"
   \key c \major
-  \ottavaMoveE \ottava 1 <d f>16-4-5-\slurShapeL ( <g, b>-1-2 <c e> <f, a>  
+  \ottava 1 <d f>16-4-5-\slurShapeL ( <g, b>-1-2 <c e> <f, a>  
     <b d> <e, g> <a c> <d, f> <g b> <c, e> <f a> <b, d>  <e g> <a, c> <d f> 
     <g, b> |
   \ottava 0 <c e>16 <f, a>  <b d> <e, g> <a c> <d, f> <g b> <c, e> <f a> <b, d>
     <e g> <a, c> <d f> <g, b> <c e>)\noBeam r |
-  \ottavaMoveF \ottava 1 <c'' ef>16-4-5( <f, a>-1-2 <bf d> <ef, g>  <a c>-4-5 
+  \ottava 1 <c'' ef>16-4-5( <f, a>-1-2 <bf d> <ef, g>  <a c>-4-5 
     <d, f> <g bf> <c, ef>  <f a> <bf, d> <ef g>-3-5 <a, c>  <d f>-4-5 <g, bf> 
     <c ef> <f, a> |
   \ottava 0 <bf d>16-3-5 <ef, g> <a c>-4-5 <d, f>  <g bf> <c, ef> <f a> <bf, d>
     <ef g>-3-5 <a, c> <d f> <g, bf>  <c ef> <f, a> 
     << { \voiceOne d'8-.)\noBeam } \new Voice { \voiceTwo bf } >> |
   \oneVoice
-  <df, bf' df>8-.\noBeam \ottavaMoveG \ottava 1 <bf''' df>16-4-5( <e, g>-1-2
+  <df, bf' df>8-.\noBeam \ottava 1 <bf''' df>16-4-5( <e, g>-1-2
     <bf' df> <e, g> <a c> <ds, fs>  <gs b> <d f> <g bf> <cs, e>  <fs a> <c ef>
     <f af> <b, d> |
   <e g>16 <bf df> <ef gf> <a, c>  <d f> <gs, b> <cs e> <g bf> \ottava 0
@@ -164,7 +152,7 @@ rightHand = \relative {
   <d f>16 <a b> <d e> <gs, b>  <d' e> <gs, b> <d' e> <gs, b>  <cs e> <fss, as>
     <cs' ds>-3-4 <fss, as>  <cs' ds> <fss, as> <cs' ds> <fss, as>) |
   \key gs \minor
-  <b ds> <cs e>-\slurShapeM \( \repeat unfold 7 { <b ds> <cs e> } |
+  <b ds>-\pSlurShapeD \( <cs e> \repeat unfold 7 { <b ds> <cs e> } |
   \repeat unfold 3 { <b ds> <cs e> <b ds> <as css> } <b ds>-1-4 <cs e>-2-5
     <b ds>-1-4( <as css>-2-4)\) |
   <b ds>16-3( <cs e> <css es>-5 <ds fs>  <dss fss>_1 <es gs>_1 <fs a> <fss as>
@@ -179,22 +167,22 @@ rightHand = \relative {
   \barNumberCheck 41
   <ds fs>16-2-3 <dss fss>-1-4 <es gs>-1-3 <fs a>-2-4  <fss as>-1-3 <gs b>-2-4
     <gss bs>-1-5 <as cs>-2-3  <ass css>-1-4 <bs ds>-1-3 <cs e>-2-4 <css es>-1-5
-    \ottavaMoveH \ottava 1 <ds fs>-2-3 <dss fss>-1-4 <es gs>-1-3 <fs a>-2-4 |
+    \ottava 1 <ds fs>-2-3 <dss fss>-1-4 <es gs>-1-3 <fs a>-2-4 |
   <fs ds'>8-2-5-.) \ottava 0 r r4 r2 |
-  \ottavaMoveI \ottava 1 <cs' e>16-2-4-\slurShapeP ( <b ds>-1-3 <cs e>-2-4 
+  \ottava 1 <cs' e>16-2-4-\slurShapeP ( <b ds>-1-3 <cs e>-2-4 
     <b ds>-1-3 <as cs>-2-4 <gs b>-1-3 <as cs> <gs b>  <fs as> <e gs> <fs as> 
     <e gs> <ds fs> <cs e> <ds fs> <cs e> \ottava 0 |
   <b ds>16 <as cs> <b ds> <as cs>  <gs b> <fs as> <gs b> <fs as>  <e gs> 
     <ds fs> <e gs> <ds fs>  <cs e> <b ds> <cs e> <b ds>) |
-  \ottavaMoveJ \ottava 1 <gs'' b>16-2-4( <fs as> <gs b> <fs as>-1-3  <e gs>-2-4
+  \ottava 1 <gs'' b>16-2-4( <fs as> <gs b> <fs as>-1-3  <e gs>-2-4
     <ds fs> <e gs> <ds fs>  <cs e> <b ds> <cs e> <b ds>  <as cs> <gs b> 
     <as cs> <gs b> |
   \ottava 0 <fs as>16 <e gs> <fs as> <e gs>  <ds fs> <cs e> <ds fs> <cs e>  
-    <b ds> <as cs> <b ds> <as cs>  <gs b>_2_4 <fs as>_1_3 <e gs>_2_4 
-    <ds fs>_1_3) |
-  <cs e>8_2_4 r \ottavaMoveK \ottava 1 <fs'' a>16-3-5( <e gs>-2-4 <d fs>-1-3 
-    <cs e>-3-5  \stemDown <b d>-2-4 <a cs>-1-3 <gs b>-3-5 <fs a>-2-4 \ottava 0
-    \stemNeutral <e gs>-1-3 <d fs>-1-2 <cs e>-3-5 <b d> |
+    <b ds> <as cs> <b ds> <as cs>  <gs b>_4_2 <fs as>_3_1 <e gs>_4_2
+    <ds fs>_3_1) |
+  <cs e>8_2_4 r \ottava 1 <fs'' a>16-3-5-\slurShapeT ( <e gs>-2-4
+    <d fs>-1-3 <cs e>-3-5  \stemDown <b d>-2-4 <a cs>-1-3 <gs b>-3-5 
+    <fs a>-2-4 \ottava 0 \stemNeutral <e gs>-1-3 <d fs>-1-2 <cs e>-3-5 <b d> |
   <a cs> <gs b> <fs a> <e gs>-1-3  <d fs>-1-2 <cs e> <b d> <a cs> <gs b>4-> 
     <fss as>-> |
     
@@ -208,7 +196,7 @@ rightHand = \relative {
   <d f>16-1-5 <cs e>-2-4 <bs ds>-1-3 <b d>-1-5  <as cs>-2-4 <a c>-1-5 <g b>-2-4
     <a cs>-1-5  <g b> <a cs> <g b> <a cs>  <fss b> <a cs>-1-5 <fss b>-2-4
     <e a>-1-3 |
-  <ds gs>8-1-2) r \ottavaMoveL \ottava 1 <bs'' ds>16( <cs e> 
+  <ds gs>8-1-2) r \ottava 1 <bs'' ds>16( <cs e> 
     \repeat unfold 5 { <bs ds> <cs e> } |
   \repeat unfold 7 { <ds fs>16 <e gs> } <ds fs> <e gs>) |
   <fs a>16( <es gs> <e g> <ds fs>  <d f> <cs e> <css es> <ds fs>  <e gs> 
@@ -217,14 +205,14 @@ rightHand = \relative {
     <a cs>  <fss b> <a cs> <fss b> <e a> |
     
   \barNumberCheck 57
-  <ds gs>8) r <bs'' ds>16-2-3_2_4( <b d>-1-4_1_5 <as cs>-2-3_2_4 <a c>-1-5
-    <gs b>-2-4 <fss as>-1-3 <fs a>-2-4 <es gs>-1-3  <e g>-1-4_1_5 
-    <ds fs>-2-3_2_4 <d f>-1-5 <cs e>-2-4 \ottava 0 |
-  <bs ds>16-1-3 <b d>-1-4_1_5 <as cs>-2-3_1_4 <a c>-1-5  <gs b>-2-4
-    <fss as>-1-3 <fs a>-2-4 <es gs>-1-3  <e g>-1-4_1_5 <ds fs>-2-3_1_4
+  <ds gs>8) r <bs'' ds>16-2-3_4_2( <b d>-1-4_5_1 <as cs>-2-3_4_2 <a c>-1-5
+    <gs b>-2-4 <fss as>-1-3 <fs a>-2-4 <es gs>-1-3  <e g>-1-4_5_1
+    <ds fs>-2-3_4_2 <d f>-1-5 <cs e>-2-4 \ottava 0 |
+  <bs ds>16-1-3 <b d>-1-4_5_1 <as cs>-2-3_4_1 <a c>-1-5  <gs b>-2-4
+    <fss as>-1-3 <fs a>-2-4 <es gs>-1-3  <e g>-1-4_5_1 <ds fs>-2-3_4_1
     <d f>-1-5 <cs e>_2  <bs ds>_1 <b d>_1 <as cs> <a c>-5 |
   <gs b>16 <fss as> <fs a> <es gs>_1  <e g>_1 <ds fs> <d f>-5 <cs e> \clef
-    bass <bs ds>_1 <b d>_1 <as cs> <a c>-5  <gs b> <fss as> <fs a> <es gs> |
+    bass <bs ds>_1 <b d>_1 <as cs> <a c>-5  <gs b> <fss as> <fs a> <es gs>_1 |
   <e g>16 <ds fs> <d f>-5 <cs e>-4 <bs ds> <cs e> 
     \repeat unfold 5 { <bs ds> <cs e> } |
   <bs ds>4) r <e gs as>2->( |
@@ -285,7 +273,7 @@ leftHandUpper = \relative {
   \clef bass q8[ <af cf f>] <gs b f'> <f gs e'>_5 <f af e'> <f af d> <f af c>
     <f g b>) |
   \key c \major
-  g,8-.\noBeam \tweak Score.CueClef.X-offset -0.5 \clef treble <b' f' a>( q2-> <c e g>8 <g a'> |
+  g,8-.\noBeam \clefMoveA \clef treble <b' f' a>_5( q2-> <c e g>8 <g a'> |
   <b f' a>4. <g g'>8) r4 \clef bass g8-. c,-. |
   f,8-.\noBeam \clef treble <a' ef' g>8( q2-> <bf d f>8 <f g'> |
   <a ef' g>4. <f f'>8) r4 \clef bass f8-. bf,-. |
@@ -341,7 +329,7 @@ leftHandUpper = \relative {
   gs4 s bs s|
   \oneVoice
   s8 r r ds,([ gs)] r r ds( |
-  gs8) r r4 <gs, gs'>8-\slurShapeR (_\< r q\! r |
+  gs8) r r4 <gs, gs'>8-\slurShapeR ^(_\< r q\! r |
   q4) r4 <cs gs'>2( |
   <gs gs'>4) r <ds' fss'>2(\arpeggio |
   <gs ds' gs>1)\fermata |
@@ -387,7 +375,7 @@ leftHandLower = \relative {
   gs8 ds' b') cs,( b ds b') ds,,( |
   \stemUp gs8-.) \stemDown s4. s2 |
   s1 |
-  gs8-\slurShapeA ( ds' b') fss,( gs ds' b') ds,,-\slurShapeB ( |
+  gs8-\slurShapeA ( ds' bs') fss,( gs ds' bs') ds,,-\slurShapeB ( |
   gs8 ds' bs') cs,( bs ds bs') ds,,( |
   
   \barNumberCheck 41
@@ -407,7 +395,7 @@ leftHandLower = \relative {
   
   \barNumberCheck 57
   gs'8 ds' bs') cs,(  bs ds bs') ds,,( |
-  gs8 ds' bs') cs,-\slurShapeQ (  bs ds bs') ds,,( |
+  gs8 ds' bs') cs,-\slurShapeQ (  bs ds bs'!) ds,,( |
   \stemUp gs8) \stemDown s8 s2. |
 }
 
@@ -466,9 +454,9 @@ dynamics = {
   s1 * 2 |
   
   \barNumberCheck 41
-  s1 * 3 |
+  s1 * 6 |
   s4 s2.\fz |
-  s1 * 4 |
+  s1 |
   
   \barNumberCheck 49
   s4 s2.^\sottoVoce |
@@ -518,9 +506,9 @@ pedal = {
   s1 |
   \override SustainPedal.extra-offset = #'(0 . 3)
   s2\sd s8. s16\su s4 | 
-  \revert SustainPedal.extra-offset
   s1 |
   s2\sd s8. s16\su s4 |
+  \revert SustainPedal.extra-offset
   s1 |
   s4\sd s16 s\su s8 s2 |
   s1 |
@@ -545,14 +533,24 @@ pedal = {
   s1 |
   
   \barNumberCheck 49
+  s4..\sd
+    \override SustainPedal.Y-offset = 1
+    s16\su s4..\sd s16\su |
   s4..\sd s16\su s4..\sd s16\su |
-  s4..\sd s16\su s4..\sd s16\su |
+  \revert SustainPedal.Y-offset
   s2.\sd s8\su s8\sd |
   s4. s8\su s4..\sd s16\su |
   s4..\sd s16\su s4..\sd s16\su |
   s4..\sd s16\su s4..\sd s16\su |
-  s4..\sd s16\su s4\sd s16 s\su s8\sd |
-  s4.. s16\su s4\sd s16 s\su s8\sd |
+  \override SustainPedal.Y-offset = 1.5
+  s4..\sd s16\su s4\sd s16 
+    \revert SustainPedal.Y-offset
+    s\su s8\sd |
+  s4..
+    \override SustainPedal.Y-offset = 1.5
+    s16\su s4\sd 
+    \revert SustainPedal.Y-offset
+    s16 s\su s8\sd |
   
   \barNumberCheck 57
   s4.. s16\su s4..\sd s16\su |

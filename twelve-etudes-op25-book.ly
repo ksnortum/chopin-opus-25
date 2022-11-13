@@ -1,4 +1,4 @@
-\version "2.23.80"
+\version "2.23.81"
 \language "english"
 
 %%% ------
@@ -13,6 +13,7 @@
 \include "includes/etude-op25-no4-parts.ily"
 \include "includes/etude-op25-no5-parts.ily"
 \include "includes/etude-op25-no6-parts.ily"
+\include "includes/etude-op25-no7-parts.ily"
 
 %%% ------------------
 %%% Construct the book
@@ -62,6 +63,11 @@
 }
 \etudeSixMusic
 
+\tocItem \markup { 
+  \concat { "Etude No. 19 in C" \raise #0.75 \teeny \sharp " minor" }
+}
+\etudeSevenMusic
+
 %%% ----
 %%% MIDI
 %%% ----
@@ -72,3 +78,4 @@
 \etudeFourMidi
 \etudeFiveMidi
 \etudeSixMidi
+\etudeSevenMidi

@@ -13,6 +13,18 @@ makeSpanner =
     \override TextSpanner.bound-details.left-broken.text = ##f
   #})
 
+spacingSectionOn = 
+#(define-music-function (dur) (real?)
+   #{
+     \newSpacingSection
+     \override Score.SpacingSpanner.spacing-increment = #dur
+   #})
+
+spacingSectionOff = {
+  \newSpacingSection
+  \revert Score.SpacingSpanner.spacing-increment
+}
+
 %
 % Redefine
 %
@@ -30,12 +42,13 @@ textInsideSlur = \once {
   \override TextScript.outside-staff-priority = ##f
 }
 
-%%% This isn't working
-pedalInsideSlur = 
-  \tweak avoid-slur #'inside
+tweakInsideSlur = 
+  \tweak avoid-slur #'inside 
   \tweak outside-staff-priority ##f
-  \tweak Y-offset 4
   \etc
+    
+fingeringInsideStaffOn = \override Fingering.staff-padding = #'()
+fingeringInsideStaffOff = \revert Fingering.staff-padding
 
 slashFlag = \once \override Flag.stroke-style = "grace"
 
@@ -75,3 +88,7 @@ dolce = \markup \large \italic "dolce"
 sostMarkup = \markup \large \italic "sostenuto"
 conForza = \markup \large \italic \whiteout \pad-markup #0.5 "con forza"
 sottoVoce = \markup \large \italic "sotto voce"
+ten = \markup \large \italic "ten."
+crescMarkup = \markup \large \italic "cresc."
+fiveToFour = \markup \finger \overtie 54
+twoToOne = \markup \finger \overtie 21
