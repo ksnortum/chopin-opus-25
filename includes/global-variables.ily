@@ -1,4 +1,4 @@
-%\version "2.22.2"
+\version "2.24.0"
 
 %
 % Scheme functions
@@ -92,3 +92,6 @@ ten = \markup \large \italic "ten."
 crescMarkup = \markup \large \italic "cresc."
 fiveToFour = \markup \finger \overtie 54
 twoToOne = \markup \finger \overtie 21
+fMarc = \markup { 
+  \dynamic f \large \italic \whiteout \pad-markup #0.5 "marc." 
+}

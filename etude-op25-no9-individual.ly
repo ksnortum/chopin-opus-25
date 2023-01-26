@@ -2,7 +2,7 @@
 \language "english"
 
 \include "includes/header-paper.ily"
-\include "includes/etude-op25-no6-parts.ily"
+\include "includes/etude-op25-no9-parts.ily"
 
-\etudeSixMusic
-\etudeSixMidi
+\etudeNineMusic
+\etudeNineMidi

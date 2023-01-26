@@ -1,4 +1,5 @@
 %...+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....
+\version "2.24.0"
 
 #(set-global-staff-size 18)
 
@@ -59,6 +60,7 @@
     \Score
     % \omit BarNumber % enable
     \override Slur.details.free-head-distance = 1
+    % \override PhrasingSlur.details.free-head-distance = 1
   }
   \context {
     \PianoStaff

@@ -1,4 +1,5 @@
 %...+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....
+\version "2.24.0"
 
 \include "global-variables.ily"
 
@@ -460,7 +461,7 @@ etudeFourMusic = \score {
     opus = "Opus 25, No 4"
   }
   \keepWithTag layout
-  \new PianoStaff \with { instrumentName = \markup \huge "No. 16" } <<
+  \new PianoStaff \with { instrumentName = \markup \huge "No. 4" } <<
     \new Staff = "upper" \rightHand
     \new Dynamics \dynamics
     \new Staff = "lower" \leftHand

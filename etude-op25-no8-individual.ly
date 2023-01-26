@@ -1,13 +1,8 @@
-\version "2.23.81"
+\version "2.24.0"
 \language "english"
 
 \include "includes/header-paper.ily"
 \include "includes/etude-op25-no8-parts.ily"
-
-\paper {
-  % ragged-right = ##t
-  ragged-last-bottom = ##t
-}
 
 \etudeEightMusic
 \etudeEightMidi

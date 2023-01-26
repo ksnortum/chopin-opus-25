@@ -1,4 +1,5 @@
 %...+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....
+\version "2.24.0"
 
 \include "global-variables.ily"
 
@@ -473,7 +474,7 @@ etudeOneMusic = \score {
   }
   \keepWithTag layout
   \new PianoStaff \with { 
-    instrumentName = \markup \huge "No. 13" 
+    instrumentName = \markup \huge "No. 1" 
     connectArpeggios = ##t
   } <<
     \new Staff = "upper" \rightHand
