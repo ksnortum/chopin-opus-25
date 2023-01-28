@@ -6,6 +6,7 @@
 
 % remove below
 \paper {
+  ragged-right = ##t
   ragged-last-bottom = ##t
 }
 

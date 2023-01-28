@@ -56,7 +56,6 @@ slashFlag = \once \override Flag.stroke-style = "grace"
 % Markup
 %
 
-fingerThreeFive = \markup \finger \overtie 35
 ritenuto = \markup \large \italic "ritenuto"
 riten = \markup \large \italic "riten."
 pocoRiten = \markup \large \italic "poco riten."
@@ -81,8 +80,6 @@ rall = \markup \large \italic "rall."
 pScherzando = \markup { 
   \dynamic p \large \italic \whiteout \pad-markup #0.5 "scherzando" 
 }
-fg.1 = \markup \finger 1
-fg.2 = \markup \finger 2
 muDash = \markup "-"
 dolce = \markup \large \italic "dolce"
 sostMarkup = \markup \large \italic "sostenuto"
@@ -90,8 +87,17 @@ conForza = \markup \large \italic \whiteout \pad-markup #0.5 "con forza"
 sottoVoce = \markup \large \italic "sotto voce"
 ten = \markup \large \italic "ten."
 crescMarkup = \markup \large \italic "cresc."
-fiveToFour = \markup \finger \overtie 54
-twoToOne = \markup \finger \overtie 21
 fMarc = \markup { 
   \dynamic f \large \italic \whiteout \pad-markup #0.5 "marc." 
 }
+benLegato = \markup \large \italic "ben legato"
+
+% Fingering
+
+fg.1 = \markup \finger 1
+fg.2 = \markup \finger 2
+twoToOne = \markup \finger \overtie 21
+threeToFive = \markup \finger \overtie 35
+fourToFive = \markup \finger \overtie 45
+fiveToThree = \markup \finger \overtie 53
+fiveToFour = \markup \finger \overtie 54

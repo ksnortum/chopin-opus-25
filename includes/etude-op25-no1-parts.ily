@@ -90,7 +90,7 @@ rightHand = \relative ef'' {
       \ns g16( b, e-4 f, b e  \ns g b, d-3 f, b d
         \ns g b, f' f, b f'  \ns g b, e f, b e) |
       \voiceOne
-      \nssh d16(-\fingerThreeFive f, g c, f g  \nssh c e, g c, e g
+      \nssh d16(-\threeToFive f, g c, f g  \nssh c e, g c, e g
         \nssh c d, g c, d g  \nssh c e, g c, e g) |
         
       \barNumberCheck 17
