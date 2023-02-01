@@ -91,6 +91,10 @@ fMarc = \markup {
   \dynamic f \large \italic \whiteout \pad-markup #0.5 "marc." 
 }
 benLegato = \markup \large \italic "ben legato"
+accelerando = \markup \large \italic "accelerando"
+piuFPossibile = \markup { 
+  \large \italic "più" \dynamic f \large \italic "possibile" 
+}
 
 % Fingering
 
