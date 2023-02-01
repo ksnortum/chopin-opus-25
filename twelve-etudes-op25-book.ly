@@ -16,6 +16,7 @@
 \include "includes/etude-op25-no7-parts.ily"
 \include "includes/etude-op25-no8-parts.ily"
 \include "includes/etude-op25-no9-parts.ily"
+\include "includes/etude-op25-no10-parts.ily"
 
 %%% ------------------
 %%% Construct the book
@@ -80,6 +81,11 @@
 }
 \etudeNineMusic
 
+\tocItem \markup {
+  "Etude No. 10 in B minor"
+}
+\etudeTenMusic
+
 %%% ----
 %%% MIDI
 %%% ----
@@ -93,3 +99,4 @@
 \etudeSevenMidi
 \etudeEightMidi
 \etudeNineMidi
+\etudeTenMidi

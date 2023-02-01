@@ -5,6 +5,21 @@
 
 %%% Positions and shapes %%%
 
+slurShapeA = \shape #'((0 . -2.5) (0 . -2.5) (0 . -2) (0 . -2)) \etc
+slurShapeB = \shape #'((1 . 1.5) (1 . 1.5) (0 . 0) (0 . 0)) \etc
+slurShapeC = \shape #'((0 . 0) (0 . 0.5) (0 . 0.5) (0 . 0)) \etc
+slurShapeD = \shape #'((0 . 0) (0 . 0) (0 . 1) (0 . 1)) \etc
+slurShapeE = \shape #'(
+                        ()
+                        ((0 . 1.25) (0 . 1.25) (0 . 1.5) (0 . 1.5))
+                      ) \etc
+slurPositionA = \tweak positions #'(-4 . -4) \etc
+slurPositionB = \tweak positions #'(-5 . -5) \etc
+slurPositionC = \tweak positions #'(-3 . -3) \etc
+slurPositionD = \tweak positions #'(5 . 5) \etc
+slurPositionE = \tweak positions #'(4 . 4) \etc
+
+fingeringMoveA = \once \override Fingering.extra-offset = #'(0 . 1.75)
 
 %%% Music %%%
 
@@ -64,17 +79,17 @@ rightHandUpper = \relative {
   <b fs' b>4_>) |
   \scaleDurations 2/3 {
     \voiceTwo \slurUp
-    <b b'>8^2^5( <as as'> <b b'>  <cs cs'> <d d'> <e e'>
-      <d d'> <cs cs'> <b b'>  <as as'> <b b'> <cs cs'>) |
-    <b b'>8^2^5( <as as'> <b b'>  <cs cs'> <d d'> <e e'>
-      <d d'> <cs cs'> <b b'>  <as as'> <b b'> <cs cs'>) |
+    \fingeringMoveA <b b'>8^2^5\slurShapeB ( <as as'> <b b'>  <cs cs'>
+      <d d'> <e e'> <d d'> <cs cs'> <b b'>  <as as'> <b b'> <cs cs'>) |
+    \fingeringMoveA <b b'>8^2^5\slurShapeB ( <as as'> <b b'>  <cs cs'> <d d'>
+      <e e'> <d d'> <cs cs'> <b b'>  <as as'> <b b'> <cs cs'>) |
       
     \barNumberCheck 17
     <b b'>8( <as as'> <b b'>  <c c'> <cs cs'> <d d'>  
       <cs cs'> <c c'> <b b'>  <as as'> <b b'> <cs cs'>) |
-    <b b'>8( <as as'> <b b'>  <c f g c>^> <cs cs'> <d f g d'>^>
+    <b b'>8\slurShapeC ( <as as'> <b b'>  <c f g c>^> <cs cs'> <d f g d'>^>
       <cs cs'> <c c'> <b b'>  <as as'> <b b'> <es, b' cs es>^>) |
-    <fs fs'>8( <g g'> <fs fs'>  <es es'> <fs fs'> <g g'>  
+    <fs fs'>8\slurShapeD ( <g g'> <fs fs'>  <es es'> <fs fs'> <g g'>  
       <fs fs'> <es es'> <fs fs'>  <g g'> <fs fs'> <es es'>) |
     \oneVoice
     <fs fs'>8->( <g g'> <fs fs'>  <es es'> <fs fs'> <g g'>
@@ -118,10 +133,9 @@ rightHandUpper = \relative {
   <fs fs'>8-3 <e e'>-5 <ds ds'>-4 <cs cs'>-3 <ds ds'> b') |
   \voiceOne \stemDown
   \override TextScript.outside-staff-priority = ##f
-  <cs, cs'>8-3( <ds ds'>-5 <cs cs'>-3 <gs' gs'>\offset Y-offset 1 ^\fiveToThree
-    <b b'>\offset Y-offset 2 ^\fiveToFour <ds ds'>-5 |
-  % adjust slur so this can be 2.5 ---------->v
-  <cs cs'>8 <ds ds'> <cs cs'>\offset Y-offset 2 ^\fourToFive 
+  <cs, cs'>8-3\slurShapeE ( <ds ds'>-5 <cs cs'>-3 <gs' gs'>\offset Y-offset 1 
+    ^\fiveToThree <b b'>\offset Y-offset 2 ^\fiveToFour <ds ds'>-5 |
+  <cs cs'>8 <ds ds'> <cs cs'>\offset Y-offset 2.5 ^\fourToFive 
     <as as'>\offset Y-offset 1.5 ^\fourToFive <gs gs'> 
     <as as'> |
   <gs gs'>8\offset Y-offset 1 ^\fourToFive <fs fs'>\offset Y-offset 0.5 
@@ -158,6 +172,7 @@ rightHandUpper = \relative {
   \barNumberCheck 57
   <fs fs'> <f f'> q4-5-3-1 q8 <e e'> |
   <e e'>4-5-3-1 q8[ <ds ds'!>] \acciaccatura { e'8 } <ds, ds'>8 <css css'>) |
+  \revert Staff.Fingering.avoid-slur
   <ds ds'>8-2-4( <e e'> <ds ds'>-4 <cs cs'>-3 <ds ds'> <e e'> |
   <ds ds'> <cs cs'> <b b'> <cs cs'> ds' <b, b'> |
   <ds ds'>8 <e e'> <es es'> <fs fs'> <as as'> <gs gs'> |
@@ -172,6 +187,7 @@ rightHandUpper = \relative {
   <ds ds'>8( <cs cs'> <b b'> <as as'> <b b'> <gs gs'> |
   <as as'>8 <gs gs'> <fs fs'> <es es'> <fs fs'> <ds ds'!> |
   <gs gs'>8 <fs fs'> <e e'> <ds ds'> <e e'> <cs cs'> |
+  \override Staff.Fingering.avoid-slur = #'inside
   <as e' as>4 <b ds b'>8) r <bs bs'>4->^( |
   <cs cs'>4\prall \voiceOne <bs bs'>8 <cs cs'> <e e'>-2-5 <ds ds'>-4 |
   <cs cs'>8-3 <bs bs'>-2-5 <as as'> <bs bs'> <cs cs'> <ds ds'>) |
@@ -183,6 +199,7 @@ rightHandUpper = \relative {
   <g g'>8-2-5 <fs fs'> <a a'> <gs gs'> q-3-5 <fs fs'>-4 |
   <fs fs'> <f f'> q4 q8 <e e'> |
   <e e'>4 q8[ <ds ds'>] \acciaccatura { e'8 } <ds, ds'>8 <css css'>) |
+  \revert Staff.Fingering.avoid-slur
   <ds ds'>8-2-4( <e e'> <ds ds'>-4 <cs cs'>-3 <ds ds'> <e e'> |
   <ds ds'> <cs cs'> <b b'> <cs cs'> ds' b |
   
@@ -274,19 +291,19 @@ rightHandLower = \relative {
   s1 * 4 |
   d''2-> d-> |
   b4-> b-> fs-> s |
-  g2_>( fs4) s
-  g2_>( fs4) s
+  g2_>\slurPositionA ( fs4) s
+  g2_>\slurPositionA ( fs4) s
   
   \barNumberCheck 9
-  bf2->( a4) s |
-  bf2->( a4) s |
+  bf2->\slurPositionC ( a4) s |
+  bf2->\slurPositionC ( a4) s |
   <bf cs>4-> s <c ds>-> s |
   <e g>4-> <g as>-> <bf cs>-> <cs e>-> |
   d2-> d-> |
-  b4-> b-> fs-> s |
+  b4\tweak Y-offset -1 -> b\tweak Y-offset -1 -> fs-> s |
   \voiceOne
-  g2->( fs4) s |
-  g2->( fs4) s |
+  g2->\slurPositionD ( fs4) s |
+  g2->\slurPositionD ( fs4) s |
   
   \barNumberCheck 17
   <f g>2-> q4-> q-> |
@@ -374,10 +391,10 @@ rightHandLower = \relative {
   s1 * 2 |
   d2-> d-> |
   b4-> b-> fs-> s |
-  g2->( fs4) s |
-  g2->( fs4) s |
-  bf2(-> a4) s |
-  bf2(-> a4) df-> |
+  g2->\slurPositionA ( fs4) s |
+  g2->\slurPositionA ( fs4) s |
+  bf2\slurPositionC (-> a4) s |
+  bf2\slurPositionC (-> a4) df-> |
   
   \barNumberCheck 113
   c4-> e-> ds-> g-> |
@@ -460,7 +477,7 @@ leftHandUpper = \relative {
     \barNumberCheck 17
     <b b'>8 <as as'> <b b'>  <c c'> <cs cs'> <d d'>  
       <cs cs'> <c c'> <b b'>  <as as'> <b b'> <cs cs'> |
-    <b b'>8 <as as'> <b b'>  <c f g c>-> <cs cs'> <d f g d'>^>
+    <b b'>8 <as as'> <b b'>  <c f g c>^> <cs cs'> <d f g d'>^>
       <cs cs'> <c c'> <b b'>  <as as'> <b b'> <gs b cs gs'>^> |
     <fs fs'>8 <es es'> <fs fs'>  <g g'> <fs fs'> <es es'>  
       <fs fs'> <g g'> <fs fs'>  <es es'> <fs fs'> <g g'> |
@@ -632,19 +649,19 @@ leftHandLower = \relative {
   \voiceFour
   d2_> d_> |
   b4-> b-> fs-> s |
-  g2->( fs4) s | 
-  g2->( fs4) s |
+  g2->\slurPositionB ( fs4) s | 
+  g2->\slurPositionB ( fs4) s |
   
   \barNumberCheck 9
-  bf2->( a4) s |
-  bf2->( a4) s |
+  bf2->\slurShapeA ( a4) s |
+  bf2->\slurShapeA ( a4) s |
   s1 * 2 |
   \voiceFour
   d'2 d |
   \voiceThree
-  b4-> b-> fs-> s |
-  g2->( fs4) s |
-  g2->( fs4) s |
+  b4\offset Y-offset 0.75 -> b-> fs-> s |
+  g2->\slurPositionE ( fs4) s |
+  g2->\slurPositionE ( fs4) s |
   
   \barNumberCheck 17
   <f g>2-> q4-> q-> |  
@@ -746,10 +763,10 @@ leftHandLower = \relative {
   s1 * 2 |
   d'2-> d-> |
   b4-> b-> fs-> s |
-  g2->( fs4) s |
-  g2->( fs4) s |
-  bf2(-> a4) s |
-  bf2(-> a4) df-> |
+  g2->\slurPositionB ( fs4) s |
+  g2->\slurPositionB ( fs4) s |
+  bf2\slurShapeA (-> a4) s |
+  bf2\slurShapeA (-> a4) df-> |
   
   \barNumberCheck 113
   c4-> e-> ds-> g-> |
@@ -886,8 +903,6 @@ dynamics = {
 
 pedal = {
   \cutTime
-  % \override Score.SustainPedal.self-alignment-X = #LEFT
-  % \override Dynamics.PianoPedalBracket.shorten-pair = #'(1 . -1)
   s1 * 8 |
   
   \barNumberCheck 9
@@ -974,7 +989,6 @@ forceBreaks = {
   s1\noBreak s1\noBreak s1\break\noPageBreak
   s1\noBreak s1\noBreak s1\break\noPageBreak
   s1\noBreak s1\noBreak s1\noBreak s1\pageBreak
- 
 }
 
 etudeTenMusic = \score {
