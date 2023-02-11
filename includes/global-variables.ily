@@ -36,6 +36,7 @@ sd = \sustainOn
 su = \sustainOff
 
 ohn = \once \hideNotes 
+ooa = \once \omit Accidental
 
 textInsideSlur = \once {
   \override TextScript.avoid-slur = #'inside
@@ -95,6 +96,7 @@ accelerando = \markup \large \italic "accelerando"
 piuFPossibile = \markup { 
   \large \italic "più" \dynamic f \large \italic "possibile" 
 }
+fRisoluto = \markup { \dynamic f \large \italic "risoluto" }
 
 % Fingering
 
