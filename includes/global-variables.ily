@@ -1,8 +1,14 @@
-\version "2.24.0"
+\version "2.24.1"
 
 %
 % Scheme functions
 %
+
+noPointAndClick =
+#(define-void-function
+     ()
+     ()
+   (ly:set-option 'point-and-click #f))
 
 makeSpanner =
 #(define-music-function (mrkup) (markup?)

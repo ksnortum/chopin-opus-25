@@ -1,5 +1,5 @@
 %...+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....
-\version "2.24.0"
+\version "2.24.1"
 
 \include "global-variables.ily"
 
@@ -104,8 +104,8 @@ rightHand = \relative {
    \stemNeutral
    b'16-5( fs a c-1 \clef treble b' fs  a c-1 b' fs a c,  a' e g b,-1 a e 
      g b, \clef bass a e g fs) \clef treble |
-   e'16-5( b-2 ds-4 fs-1 e' b  ds fs-1 e' b ds-4 fs,-1  ds'-4 as es fs-1 ds-4 as
-     cs fs,-1 ds-4 as cs fs, |
+   e'16-5( b-2 ds-4 fs-1 e' b  ds fs-1 e' b ds-4 fs,-1  
+     ds'-4 as es fs-1 ds-4 as  cs fs,-1 ds-4 as cs fs, |
    e'16-5 b-2 ds-4 fs-1 e' b  ds fs-1 e' b ds fs,
   }
   b'4-.) r |
@@ -124,8 +124,8 @@ rightHand = \relative {
       d f,-1 e-5 bf d f,) |
     e'16-5( b-2 d-4 f-1 e' b  d f-1 e' b d f,-1  e' gs, d' f,-1 e-5 gs,
       d' f,-1 e-5 gs, d' f,) |
-    e'16-5( g,-2 d'-4 f,-1 g'-5 e-2  f-3 d-1 e' g, d' f,  g'-5 e-2 f-3 d-1 e' g,
-      \ottava 1 d' f, g' e f d |
+    e'16-5( g,-2 d'-4 f,-1 g'-5 e-2  f-3 d-1 e' g, d' f,  
+      g'-5 e-2 f-3 d-1 e' g,  \ottava 1 d' f, g' e f d |
     a'16 e g c, e' g,  d' e, c'-5 gs b-4 e,  bf'-5 f-2 af-4 df,-1 gf-5 df
       f-4 af, ef'-5 af, df-4 f, \ottava 0 |
     df'16-5 fs, c'-5 e, g-3 c,-1  af'-4 e-2 f-3 c-1 g'-4 e  
@@ -139,8 +139,9 @@ rightHand = \relative {
   <g' bf>4( <bf, g' bf>8. q16 q4 <c g' c> |
   <bf g' bf>4 <bf e g> <bf g' bf>2) |
   \scaleDurations 2/3 {
-    \ottava 1 c''16-5( ef,-2 bf'-4 df,-1 af'-5 ef-2  g-4 df-1 f-5 df-2 ef-4 g,-1
-      f'-5 c ef af,-1 df-5 af  \ottava 0 c ef,-1 bf'-5 ef, af c,-1 |
+    \ottava 1 c''16-5( ef,-2 bf'-4 df,-1 af'-5 ef-2
+      g-4 df-1 f-5 df-2 ef-4 g,-1  f'-5 c ef af,-1 df-5 af  
+      \ottava 0 c ef,-1 bf'-5 ef, af c,-1 |
     c'-1 ef,-2 bf'-4 df,-1 a'-5 ef-2  bf'-4 df,-1 df'-5 ef,-2 g df-1
       bf'-5 ef, af-4 c, g'-3 ef  af-4 c, bf'-5 ef, af c,) |
     gs''-5( b, fs'-4 a, e'-5 b  ds-4 a cs-4 a-2 b-3 fs-1
@@ -153,16 +154,16 @@ rightHand = \relative {
       \ooa cs'-4 \ooa gs b d,-1 cs-4 gs  \ottava 0 b d,-1 cs-4 gs b d,) |
     d'16-5( g, c c, f'-5 c  ef g, af' ef g c,  c' g b e, bf'-3 g-2
       a-5 ef-1 af-4 ef-2 g-3 c,-1) |
-    f16-5( c ef gf,-1 f' c  ef-4 gf-1 f'-5 c ef gf  \ottava 1 f' c ef g,-1 f-5 c
-      \ottava 0 ef gf, f c ds fs,) |
+    f16-5( c ef gf,-1 f' c  ef-4 gf-1 f'-5 c ef gf  
+      \ottava 1 f' c ef g,-1 f-5 c  \ottava 0 ef gf, f c ds fs,) |
     fs'16-5( b, e e,-1 a'-5 e  g b,-1 c' g b e,  e' b ds g, d'-5 b-2
       cs-4 g-1 c-5 g b e,-1) |
     bf'16-5( e, a-4 bf, af'-5 e  g-4 bf, a'-5 e g bf,  g'-5 c, fs-4 a, f'-5 c
       fs-4 a, g'-5 b, f'-4 a,) |
     fs'16-5( b,-2 f'-4 g,-1 e'-5 b-2  e-4 g,-1 f'-5 a,-2 e'-4 g,-1  
       e' a, cs f, d' a  d e, b'-3 a-2 c-4 e,-1) |
-    c'16-4( a b f-1 c'-4 a  b f'-1 c'-4 a b f'  \ottava 1 c' a b f c a \ottava 0
-      b f c a b f) |
+    c'16-4( a b f-1 c'-4 a  b f'-1 c'-4 a b f'  \ottava 1 c' a b f c a 
+      \ottava 0 b f c a b f) |
     b16-5( fs a c, b' fs  a c b'-5 fs a c  \ottava 1 b'-5 \ooa fs a c, b-5 fs
       \stemDown \ottava 0 a c, b fs a c,) |
       
@@ -206,7 +207,8 @@ rightHand = \relative {
     \clef treble e'16( b d f e' b  d f e' b d f,  d' a c f, d a
       c f, d a c f,) |
     e'16( b d f e' b  d f e' b d e,  d' a c e, d a  c e, d a c b) |
-    a'16( e gs b a' e  gs b a' e gs b,  gs' ds fs b, gs ds  fs b, gs ds fs b,) |
+    a'16( e gs b a' e  gs b a' e gs b,  gs' ds fs b, gs ds
+      fs b, gs ds fs b,) |
     a'16( e gs b a' e  gs b a' e gs b, 
   }
   \ottava 1 e'4) \ottava 0 r |
@@ -248,7 +250,7 @@ rightHand = \relative {
   <a c e a>2-> <a b d a'>-> |
   <a c e a>1*1/2->
   \magnifyMusic 0.63 { \scaleDurations 2/14 {
-    \voiceOne \staffDown a,8([ b c d e fs gs a b \staffUp c d e fs gs a b c d e 
+    \voiceOne \staffDown a,8([ b c d e fs gs a b \staffUp c d e fs gs a b c d e
       fs gs a b c d e fs gs] |
   } }
   \oneVoice a4-.) r r2 |
@@ -283,7 +285,8 @@ leftHand = \relative {
   <g e'>4 << { c <g e'>2) } \new Voice { \voiceFour c,2. } >> |
   
   \barNumberCheck 17
-  c4-. \tuplet 3/2 { <g'' bf e>8( b, c) } <cs g' bf ef>4\arpeggio <cs, cs'>->( |
+  c4-. \tuplet 3/2 { <g'' bf e>8( b, c) } <cs g' bf ef>4\arpeggio 
+    <cs, cs'>->( |
   <d d'>4) \tuplet 3/2 { <bf'' d g>8( cs, d) } <ef bf' df g>4\arpeggio 
     <ef, ef'>( |
   <e e'>4) c''8.->( c16) c4-> <c,, c'>( |
@@ -332,7 +335,8 @@ leftHand = \relative {
   <ef ef'>4 ef'''8._( ef16 <ef, c' ef>4 af'8. c,16 |
   << { ef4 bf8. ef16 } \\ { ef,2 } >> <af, ef' c'>4) r |
   <b, b'>4_\( b''8. b16 <b, gs' b>4 e'8[ r16 gs,] |
-  << { b4 \tuplet 3/2 { fs8( gs a) } } \\ { b,2 } >> <e, b' gs'>4\)\arpeggio r |
+  << { b4 \tuplet 3/2 { fs8( gs a) } } \\ { b,2 } >> <e, b' gs'>4\)\arpeggio 
+    r |
   
   \barNumberCheck 49
   <e e'>4 \tuplet 3/2 { <b b'>8( <gs gs'> <b b'>) } <e, e'>8[ r16 <e' e'>](
@@ -341,7 +345,8 @@ leftHand = \relative {
   <af af'>4 \tuplet 3/2 { <ef ef'>8( <c c'> <ef ef'>) } <af, af'>8[ r16 
     <af' af'>]( <bf bf'>8. <af af'>16) |
   <g g'>4 <e e'> <g g'> \tuplet 3/2 { <a a'>8( <as as'> <b b'>) } |
-  <c c'>4-> <c, g' e'>->\arpeggio <f c' a'>->\arpeggio <b, fs' ds'>->\arpeggio |
+  <c c'>4-> <c, g' e'>->\arpeggio <f c' a'>->\arpeggio 
+    <b, fs' ds'>->\arpeggio |
   <e b' g'>->\arpeggio <a e' cs'>->\arpeggio <d a' d>->\arpeggio 
     <a e' c'>->\arpeggio |
   <d, d'>4-. <f' f'>( <as, as'>8[ r16 <c c'>] <b b'>4) |
@@ -417,8 +422,8 @@ leftHand = \relative {
   <a e' a>2-> <a f' a>-> |
   <a e' a>1*1/2->
   \magnifyMusic 0.63 { \scaleDurations 2/14 {
-    \voiceFour a8([ b c d e fs gs a b c d e fs gs a b c \clef treble d e fs gs a
-    b c d e fs gs] |
+    \voiceFour a8([ b c d e fs gs a b c d e fs gs a b c \clef treble d e fs gs
+    a b c d e fs gs] |
   } }
   \oneVoice a4-.) r r2 |
   \bar "|."
