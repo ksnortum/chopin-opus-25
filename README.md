@@ -15,9 +15,7 @@ LilyPond version 2.24.0 or higher.  It is assumed that `lilypond` is in the PATH
         
 Where *nox* is no1, no2, etc.
 
-The PDFs produced will have point-and-click info in them, which you may not want (it makes the file size much bigger).  
-To avoid this use the `-dno-point-and-click` command line option, or, if you're including globals, put `\noPointAndClick` in the source files.
-This is explained in detail [here](https://lilypond.org/doc/v2.24/Documentation/usage/command_002dline-usage).
+The PDFs produced will have point-and-click info in them, which you may not want (it makes the file size much bigger).  To avoid this use the `-dno-point-and-click` command line option, or, if you're including globals, put `\noPointAndClick` in the source files.  This is explained in detail [here](https://lilypond.org/doc/v2.24/Documentation/usage/command_002dline-usage).
     
 ## Questions, Problems, etc.
 If you have a question about these source files or how to produce a PDF, you can contact me at: **knute (at) snortum (dot) net**
