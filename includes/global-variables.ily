@@ -53,6 +53,9 @@ tweakInsideSlur =
   \tweak avoid-slur #'inside 
   \tweak outside-staff-priority ##f
   \etc
+  
+articulationInsideSlur = \override Script.avoid-slur = #'inside
+fingeringInsideSlur = \override Staff.Fingering.avoid-slur = #'inside
     
 fingeringInsideStaffOn = \override Fingering.staff-padding = #'()
 fingeringInsideStaffOff = \revert Fingering.staff-padding

@@ -2,7 +2,7 @@
 LilyPond source files for Chopin's Twelve Etudes, Opus 25.  We are nearly but not completely finished.
 
 ## Requirements
-LilyPond version 2.24.0 or higher.  It is assumed that `lilypond` is in the PATH of your system.
+LilyPond version 2.24.1 or higher.  It is assumed that `lilypond` is in the PATH of your system.
 
 ## Producing PDFs or other outoputs
 * To create all etudes in a single book, `cd` into your installation directory and type:
