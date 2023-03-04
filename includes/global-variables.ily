@@ -53,7 +53,9 @@ tweakInsideSlur =
   \tweak avoid-slur #'inside 
   \tweak outside-staff-priority ##f
   \etc
-  
+
+insideSlur = \tweak avoid-slur #'inside \etc
+
 articulationInsideSlur = \override Script.avoid-slur = #'inside
 fingeringInsideSlur = \override Staff.Fingering.avoid-slur = #'inside
     
@@ -106,6 +108,7 @@ piuFPossibile = \markup {
   \large \italic "più" \dynamic f \large \italic "possibile" 
 }
 fRisoluto = \markup { \dynamic f \large \italic "risoluto" }
+ilPuiForte = \markup \large \italic "il più forte possibile"
 
 % Fingering
 

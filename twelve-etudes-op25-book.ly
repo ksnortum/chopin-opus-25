@@ -18,6 +18,7 @@
 \include "includes/etude-op25-no9-parts.ily"
 \include "includes/etude-op25-no10-parts.ily"
 \include "includes/etude-op25-no11-parts.ily"
+\include "includes/etude-op25-no12-parts.ily"
 
 %%% ------------------
 %%% Construct the book
@@ -36,6 +37,8 @@
   }
   \markuplist \table-of-contents
 }
+
+% \noPointAndClick % <-- uncomment me for smaller PDF size
 
 \tocItem \markup { 
   \concat { "Etude No. 1 in A" \raise #0.75 \teeny \flat " major" }
@@ -92,6 +95,11 @@
 }
 \etudeElevenMusic
 
+\tocItem \markup {
+  "Etude No. 12 in C minor"
+}
+\etudeTwelveMusic
+
 %%% ----
 %%% MIDI
 %%% ----
@@ -107,3 +115,4 @@
 \etudeNineMidi
 \etudeTenMidi
 \etudeElevenMidi
+\etudeTwelveMidi
