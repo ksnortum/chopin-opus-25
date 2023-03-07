@@ -11,6 +11,8 @@ markupMoveC = \tweak Y-offset 2.5 \etc
 markupMoveD = \tweak Y-offset 3.5 \etc
 markupMoveE = \tweak Y-offset 4 \etc
 
+trillMoveA = \offset Y-offset 0.5 \etc
+
 slurPositionsA = \tweak positions #'(3 . 2) \etc
 slurPositionsB = \tweak positions #'(4 . 0) \etc
 slurPositionsC = \tweak positions #'(4 . 2) \etc
@@ -31,6 +33,7 @@ slurShapeF = \shape #'(
                         ()
                         ((0 . 0) (0 . 0) (0 . 2) (0 . 1))
                       ) \etc
+slurShapeG = \shape #'((0 . 3) (0 . 1.5) (0 . 0) (0 . 0)) \etc
 
 rotateHairpinA = \once \override Hairpin.rotation = #'(5 -1 0)
 
@@ -76,7 +79,8 @@ rightHandUpper = \relative {
     \tag midi   { <gs b e>) } |
   cs4-\slurPositionsB ( 
     \tag layout { \afterGrace ds~ { ds8*1/4[ ds e ds css ds] } } 
-    \tag midi   { ds8~ \tuplet 3/2 { ds32 ds e ds css ds } } fs8. e16 |
+    \tag midi   { ds8~ \tuplet 3/2 { ds32 ds e ds css ds } } 
+    fs8. e16 |
   ds8 gs4) s4. |
   ds4( es fs |
   
@@ -282,8 +286,8 @@ leftHand = \relative {
   cs4 \grace { b8[ ds cs] } b8)\noBeam  fss,32-4(\< gs as b-1  
     css-4[ ds fss-1 gs-3]  \scaleDurations 2/3 { as32[ b-1 css-4] 
                                                  ds[ e es])\! } |
-  \clef treble fs4-2^( es16.[ fs32] \scaleDurations 2/3 { es16[ dss es] }
-    bs'8. ds,16 |
+  \clef treble fs4-2-\slurShapeG ^( es16.[ fs32] 
+    \scaleDurations 2/3 { es16[ dss es] } bs'8. ds,16 |
     
   \barNumberCheck 25
   ds4-3-> \grace { css8[ es ds] } css8)\noBeam \clef bass gss,32->-4(\< as cs 
@@ -342,8 +346,9 @@ leftHand = \relative {
     as b bs cs css ds)\! } } |
   e2\(\f\> ds8. cs16 |
   cs4.~ cs32 bs ds cs  b8. a16-4\! |
-  a4-1 gs \grace { es16[( fs]) } \tag layout { fs4_>-\tweakInsideSlur\trill }
-    \tag midi { \tuplet 3/2 {\repeat unfold 6 { gs32 fs } } } |
+  a4-1 gs \grace { es16[( fs]) } 
+    \tag layout { fs4_>-\tweakInsideSlur-\trillMoveA\trill }
+    \tag midi   { \tuplet 3/2 {\repeat unfold 6 { gs32 fs } } } |
     
   \barNumberCheck 57
   es4 gs'->\) es,,->_4 |
@@ -433,7 +438,9 @@ pedal = {
   
   \barNumberCheck 41
   s2. * 5 |
-  \tag layout { s16 s8.\sd } \tag midi { \grace { s8\sd } s4 } s8 s\su s4 |
+  \tag layout { s16 s8.\sd } 
+  \tag midi   { \grace { s8\sd } s4 } 
+    s8 s\su s4 |
   s2. * 2 |
   
   \barNumberCheck 49

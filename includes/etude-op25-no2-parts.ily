@@ -455,8 +455,10 @@ etudeTwoMusic = \score {
       opus = "Opus 25, No 2"
   }
   \keepWithTag layout
-  \new PianoStaff \with { instrumentName = \markup \huge "No. 2" } <<
-    \set PianoStaff.connectArpeggios = ##t
+  \new PianoStaff \with { 
+    instrumentName = \markup \huge "No. 2" 
+    connectArpeggios = ##t
+  } <<
     \new Staff = "upper" \rightHand
     \new Dynamics \dynamics
     \new Staff = "lower" \leftHand

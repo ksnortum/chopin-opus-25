@@ -17,10 +17,6 @@ pSlurShapeB = \shape #'(
                          ((0 . 0) (0 . -12) (0 . -11) (0 . 4))
                          ((0 . 0) (0 . 2) (0 . 2) (0 . 0))
                        ) \etc
-pSlurShapeC = \shape #'(
-                         ((0 . 0) (0 . -12) (0 . -10) (0 . 4))
-                         ((0 . 0) (0 . 0.5) (0 . 1) (0 . -2))
-                       ) \etc
 pSlurShapeD = \shape #'((0 . -2) (0 . 0) (0 . 1) (0 . -0.25)) \etc
 
 slurShapeA = \shape #'((0 . 3) (0 . 2) (0 . 0) (0 . 0)) \etc
@@ -30,7 +26,6 @@ slurShapeD = \shape #'((0 . 2) (0 . 2) (0 . 0) (0 . 0)) \etc
 slurShapeE = \shape #'((0 . 0) (0 . -1.5) (0 . -1.5) (0 . 0)) \etc
 slurShapeF = \shape #'((0 . 0) (0 . -1) (0 . -1.5) (0 . 0)) \etc
 slurShapeG = \shape #'((0 . 2.5) (0 . 1.5) (0 . 0) (0 . 0)) \etc
-slurShapeH = \shape #'((0 . 0) (0 . 0) (0 . -1) (0 . -2)) \etc
 slurShapeI = \shape #'((0 . 0) (0 . -0.5) (0 . -0.5) (0 . 0)) \etc
 slurShapeJ = \shape #'((0 . 3) (0 . 2) (0 . 0) (0 . 0)) \etc
 slurShapeK = \shape #'((0 . 0) (0 . -0.5) (0 . -0.5) (0 . 0)) \etc
@@ -43,8 +38,10 @@ slurShapeQ = \shape #'(
                         ((0 . 1.25) (0 . 0.5) (0 . 0) (0 . 0))
                       ) \etc
 slurShapeR = \shape #'((-1 . 3) (0 . 2) (0 . 2) (0 . 3)) \etc
-slurShapeS = \shape #'((0 . 0) (0 . 0) (0 . 1) (0 . -2)) \etc
-slurShapeT = \shape #'((0 . 0) (0 . 0) (0 . 0.5) (0 . 0)) \etc
+slurShapeT = \shape #'(
+                        ()
+                        ((0 . 3.5) (0 . 3.5) (0 . 3.5) (0 . 3.5))
+                      ) \etc
 
 %%% Music %%%
 
@@ -57,7 +54,6 @@ global = {
 rightHand = \relative {
   \clef treble
   \global
-  \override Staff.Fingering.avoid-slur = #'inside
   \tempo "Allegro" 2 = 69
   
   <b' ds>16-1-4-\pSlurShapeA \( <cs e>-2-5 
@@ -71,7 +67,7 @@ rightHand = \relative {
     <fs a>-2-4 <fss as>-1-3  <gs b>-2-4 <gss bs>-1-5 <as cs>-2-3 
     <ass css>-1-4  <bs ds>-1-3 <cs e>-2-4 <css es>-1-5 <ds fs>-2-3 |
   \ottava 1 <dss fss>16-1-4 <es gs>-1-3 <fs a>-2-4 <fss as>-1-3  
-    <gs b>8-2-4 \) \ottava 0 r r2 |
+    <gs b>8-2-4\) \ottava 0 r r2 |
   <e, gs>16-1-4-\pSlurShapeB \( <fs a>-2-5 
     \repeat unfold 7 { <e gs> <fs a> } |
   <e gs>16 <fs a> <e gs> <ds fss>-2-3  <e gs> <fs a> <e gs> <ds fss>
@@ -97,7 +93,7 @@ rightHand = \relative {
   <as css>16-2-4( <b ds>-1-3 <cs e>-2-4 <css es>-1-5  <ds fs>-2-3 <dss fss>-2-4
     <es gs>-1-3 <fs a>-2-4  <fss as>-1-3 <gs b>-2-4 <a c>-1-5 <as cs>-2-3
     <b d>-1-4 <bs ds>-1-3 <cs e>-2-4 <css es>-1-5 |
-  <ds fs>8-2) r \ottava 1 <b'' ds>16-1-3-\slurShapeS ( <cs e>-2-4 
+  <ds fs>8-2) r \ottava 1 <b'' ds>16-1-3 ( <cs e>-2-4 
     <b ds>-1-3 <as cs>-2-4 <gs b>-1-3 <as cs> <gs b> <fs as>-2-4  <e gs>-1-3 
     <fs as> <e gs> <ds fs>-2-4 |
   \ottava 0 <cs e>16-1-3 <ds fs> <cs e> <b ds>-2-4  <as cs>-1-3 <b ds> <as cs>
@@ -110,7 +106,7 @@ rightHand = \relative {
   <bs ds>16-1-3 <b d>-1-5 <as cs>-2-4 <a c>-1-5  <gs b>-2-4 <a c>-1-5
     <as cs>-2-3 <b d>-1-4  <bs ds>-1-3 <cs e>-2-4 <css es>-1-5 <ds fs>-2-4
     <e g>-1-5 <ds fs>-2-4 <d f>-1-5 <cs e>-2-4) |
-  <b ds>16-3-\pSlurShapeC \( <cs e>-5 \repeat unfold 3 { <b ds> <cs e> } 
+  <b ds>16-3-\( <cs e>-5 \repeat unfold 3 { <b ds> <cs e> } 
     <b ds>-4 <cs e>-5 \repeat unfold 3 { <b ds> <cs e> } |
   <b ds>16_1 <cs e>_2 <b ds>_1 <as css>-2-3  <b ds> <cs e> <b ds> <as css>
     <b ds> <cs e> <b ds> <as css>  <b ds>-1-4 <cs e>-2-5 <b ds>-1-4( 
@@ -217,7 +213,8 @@ rightHand = \relative {
   <e g>16 <ds fs> <d f>-5 <cs e>-4 <bs ds> <cs e> 
     \repeat unfold 5 { <bs ds> <cs e> } |
   <bs ds>4) r <e gs as>2->( |
-  <ds gs bs>4) r \clef treble \tempo "Lento" <cs' ds as'>2(\arpeggio |
+  \set Score.tempoHideNote = ##t
+  <ds gs bs>4) r \clef treble \tempo "Lento" 4 = 60 <cs' ds as'>2(\arpeggio |
   <bs ds bs'>1)\fermata |
   \bar "|."
 }
@@ -249,7 +246,7 @@ leftHandUpper = \relative {
   ds8-.\noBeam \stemDown <cs' ds b'>-\slurShapeF ( \stemUp b'[ as] gs fss) 
     ds4\rest |
   gs,4 s2. |
-  fs8-.[ fs'-.] \clef treble b''-\slurShapeH ( fs, as' fs, \noteHShiftA gs'8.
+  fs8-.[ fs'-.] \clef treble b''( fs, as' fs, \noteHShiftA gs'8.
     fs16~ |
   \once \hideNotes fs8) \clef bass \oneVoice fs,-.-1\noBeam fs,-.-5\noBeam 
     fs,-.-1\noBeam fs,-.-5\noBeam fs'-.-1\noBeam fs'-.-5\noBeam fs'-.-1 |
@@ -391,7 +388,7 @@ leftHandLower = \relative {
   gs'8 e' cs') ds,(  cs e cs') gs,,( |
   gs'8 ds' bs') cs,(  bs ds bs') ds,,( |
   gs8 ds' bs') cs,(  bs ds bs') ds,,( |
-  gs8 e' cs') ds,(  cs e cs') gs,,-\slurShapeD ( |
+  gs8 e' cs') ds,(  cs e cs') gs,,( |
   gs'8 e' cs') ds,(  cs e cs') gs,,( |
   
   \barNumberCheck 57
@@ -403,6 +400,7 @@ leftHandLower = \relative {
 leftHand = <<
   \clef bass
   \global
+  \override Staff.Script.avoid-slur = #'inside
   \mergeDifferentlyHeadedOn
   \new Voice \leftHandUpper
   \new Voice \leftHandLower
@@ -410,7 +408,8 @@ leftHand = <<
 
 dynamics = {
   \override TextScript.Y-offset = -0.5
-  s1^\sottoVoce |
+  \tag layout { s1^\sottoVoce | }
+  \tag midi   { s1\pp | }
   s1 |
   s2 s\< |
   s2... s16\! |
@@ -426,7 +425,7 @@ dynamics = {
   s1 |
   s2\> s8. s16\! s4 |
   s4 s16 s\< s8 s4.. s16\! |
-  s4 s2.\f |
+  s4 s2.\tweak X-offset -0.5 \f |
   s1 |
   
   \barNumberCheck 17
@@ -468,9 +467,11 @@ dynamics = {
   \barNumberCheck 57
   s4 s2.\f |
   s1 |
-  s1^\diminMarkup |
+  \tag layout { s1^\diminMarkup | }
+  \tag midi   { s1\dim | }
   s1 |
-  s4 s2.^\sottoVoce |
+  s4 \tag layout { s2.^\sottoVoce | }
+     \tag midi   { s2.\pp | }
   s2 s\f |
 }
 
@@ -500,7 +501,7 @@ pedal = {
   s4.\sd s32 s16.\su s2 |
   s1 |
   s4..\sd s16\su s4..\sd s16\su |
-  s4..\sd s16\su s4..\sd s16\su |
+  s2\sd s4..\su\sd s16\su |
   
   \barNumberCheck 25
   s8.\sd s16\su s2. |
@@ -509,9 +510,9 @@ pedal = {
   s2\sd s8. s16\su s4 | 
   s1 |
   s2\sd s8. s16\su s4 |
-  \revert SustainPedal.extra-offset
   s1 |
   s4\sd s16 s\su s8 s2 |
+  \revert SustainPedal.extra-offset
   s1 |
   
   \barNumberCheck 33
@@ -526,9 +527,10 @@ pedal = {
   \barNumberCheck 41
   s4\sd s16 s8.\su s2 |
   s1 |
-  s2\sd s\su |
+  s2\sd \override SustainPedal.Y-offset = 2 s\su |
   s8 s4\sd s16 s\su s2 |
   s4\sd s8. s16\su s2 |
+  \revert SustainPedal.Y-offset
   s8 s4\sd s16 s\su s2 |
   s2\sd s\su |
   s1 |
@@ -541,12 +543,12 @@ pedal = {
   \revert SustainPedal.Y-offset
   s2.\sd s8\su s8\sd |
   s4. s8\su s4..\sd s16\su |
-  s4..\sd s16\su s4..\sd s16\su |
-  s4..\sd s16\su s4..\sd s16\su |
   \override SustainPedal.Y-offset = 1.5
-  s4..\sd s16\su s4\sd s16 
+  s2\sd s4..\su\sd s16\su |
+  s2\sd s4..\su\sd s16\su |
+  s4..\sd s16\su s4\sd s8 
     \revert SustainPedal.Y-offset
-    s\su s8\sd |
+    s\su\sd |
   s4..
     \override SustainPedal.Y-offset = 1.5
     s16\su s4\sd 
@@ -554,33 +556,46 @@ pedal = {
     s16 s\su s8\sd |
   
   \barNumberCheck 57
+  \override SustainPedal.Y-offset = 2
   s4.. s16\su s4..\sd s16\su |
+  \revert SustainPedal.Y-offset
   s2...\sd s16\su |
   s1 * 3 |
   s2 s4..\sd s16\su |
-  s1\sd |
+  s2.\sd s4\su |
 }
 
 forceBreaks = {
   \repeat unfold 4 { s1\noBreak s1\break\noPageBreak } 
   s1\noBreak s1\pageBreak
   
-  \repeat unfold 5 { s1\noBreak s1\break\noPageBreak } 
+  s1\noBreak s1\noBreak s1\break\noPageBreak
+  s1\noBreak s1\break\noPageBreak
+  s1\noBreak s1\break\noPageBreak
   s1\noBreak s1\pageBreak
   
-  \repeat unfold 4 { s1\noBreak s1\break\noPageBreak }
-  s1\noBreak s1\pageBreak
+  s1\noBreak s1\break\noPageBreak
+  s1\noBreak s1\noBreak s1\break\noPageBreak
+  s1\noBreak s1\break\noPageBreak
+  s1\noBreak s1\noBreak s1\pageBreak
   
-  \repeat unfold 4 { s1\noBreak s1\break\noPageBreak }
-  s1\noBreak s1\pageBreak
-  
-  \repeat unfold 4 { s1\noBreak s1\break\noPageBreak }
+  s1\noBreak s1\break\noPageBreak
+  s1\break\noPageBreak
+  s1\noBreak s1\break\noPageBreak
+  s1\noBreak s1\break\noPageBreak
   s1\noBreak s1\pageBreak
   
   s1\noBreak s1\break\noPageBreak
   s1\noBreak s1\break\noPageBreak
-  s1\noBreak s2\break\noPageBreak 
-  s s1\break\noPageBreak
+  s1\noBreak s1\noBreak s1\break\noPageBreak
+  s1\noBreak s1\noBreak s1\break\noPageBreak
+  s1\noBreak s1\pageBreak
+  
+  s1\noBreak s1\break\noPageBreak
+  s1\noBreak s1\noBreak s1\break\noPageBreak
+  s1\noBreak s1\break\noPageBreak
+  s1\noBreak s1\break\noPageBreak
+  s1\noBreak s1\noBreak s1\noBreak s1\pageBreak
 }
 
 etudeSixMusic = \score {
@@ -588,7 +603,10 @@ etudeSixMusic = \score {
     opus = "Opus 25, No 6"
   }
   \keepWithTag layout
-  \new PianoStaff \with { instrumentName = \markup \huge "No. 6" } <<
+  \new PianoStaff \with { 
+    instrumentName = \markup \huge "No. 6" 
+    \override Fingering.avoid-slur = #'inside
+  } <<
     \new Staff = "upper" \rightHand
     \new Dynamics \dynamics
     \new Staff = "lower" \leftHand

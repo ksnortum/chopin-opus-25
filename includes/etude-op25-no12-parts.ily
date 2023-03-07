@@ -212,7 +212,7 @@ rightHandUpper = \relative {
     bf e, e bf) |
   \staffDown \beamDamping.4 f16->( b \staffUp f' f  b f' f b  f'-> b, f f
     b, f f b,) |
-  \oneVoice g16->( b g' g  b g' b, g  af,-> b af' af b af' b, af) |
+  \oneVoice g16->( b g' g  b g' b, g)  af,->( b af' af b af' b, af) |
   \voiceOne g,16->( c g' g  c g' g c  g'-> c, g g  c, g g c,) |
   \oneVoice c16->( g' c c  \ottava 1 g' c c g'  c-> g c, c
     \ottava 0 g c, c g) |
@@ -503,11 +503,8 @@ dynamics = {
   
   \barNumberCheck 25
   s1 * 6 |
-  \tag layout {
-    s16 s8.^\markup \large \italic "poco" s4^\markup \large \italic "a poco"
-      s8 s^\crescMarkup s4 |
-  }
-  \tag midi { s1\cresc | }
+  \tag layout { s16 s8.^\poco s4^\aPoco s8 s^\crescMarkup s4 | }
+  \tag midi   { s1\cresc | }
   s1 |
   
   \barNumberCheck 33
@@ -549,8 +546,9 @@ dynamics = {
 pedal = {
   % \cutTime
   \repeat unfold 6 { s2...\sd s16\su | }
-  s2\sd s4\su\sd s8.\su\sd s16\su |
+  s2\sd \override SustainPedal.Y-offset = 2 s4\su\sd s8.\su\sd s16\su |
   s8.\sd s16\su s4\sd s8.\su\sd s16\su s8.\sd s16\su |
+  \revert SustainPedal.Y-offset
   
   \barNumberCheck 9
   \repeat unfold 6 { s2...\sd s16\su | }
@@ -581,7 +579,12 @@ pedal = {
   \repeat unfold 8 { s2...\sd s16\su | } 
   
   \barNumberCheck 41
-  \repeat unfold 4 { s2...\sd s16\su | } 
+  s2...\sd s16\su |
+  s2...\sd s16\su |
+  \override SustainPedal.Y-offset = 2 
+  s2...\sd s16\su |
+  s2...\sd s16\su |
+  \revert SustainPedal.Y-offset
   s2\sd s4..\su\sd s16\su |
   s2\sd s8.\su\sd s16\su s8.\sd s16\su |
   s2...\sd s16\su |
@@ -589,8 +592,9 @@ pedal = {
   
   \barNumberCheck 49
   \repeat unfold 4 { s2...\sd s16\su | }
-  s2\sd s4\su\sd s8.\su\sd s16\su |
+  s2\sd \override SustainPedal.Y-offset = 2 s4\su\sd s8.\su\sd s16\su |
   s8.\sd s16\su s4\sd s8.\su\sd s16\su s8.\sd s16\su |
+  \revert SustainPedal.Y-offset
   s2...\sd s16\su
   s2...\sd s16\su
   

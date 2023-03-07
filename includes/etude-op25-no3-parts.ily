@@ -5,6 +5,8 @@
 
 %%% Positions and shapes %%%
 
+% ohn = once hide notes
+
 moveFingerA = {
    \temporary \override Fingering.X-offset = 0.25
    \temporary \override Fingering.add-stem-support = ##f
@@ -282,8 +284,7 @@ rightHandUpper = \relative {
   g32-\ssc ([ f g f] \ohn c'8)  
     g32-\ssc ([ f g f] \ohn c'8)  
     g32-\ssc ([ f g f] \ohn c'8) |
-  \moveFingerB g32[-1-3 \revertFingerB f g f]  g[ f g f]  g[ f g f]  g[ f g f]
-    g[ f g f]  g[ f g f] |
+  \moveFingerB g32[-1-3 \revertFingerB f g f] \repeat unfold 5 { g[ f g f] } |
   \oneVoice
   <c f>8.-\ssk (\trill e16-1  f32[ gs bf a-1]  b[ d c-1 e] \ottava 1
     g[ f-1 gs bf]  a-1[ b d c] |

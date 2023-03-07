@@ -136,7 +136,7 @@ rightHandUpper = \relative {
   af8 s gf s |
   ef8 s df s |
   cf8 s bff->\noBeam af |
-  s4 af8 s |
+  s4 af8^\aTempo s |
   df8 s af s |
   df,8 s af' s |
   df8 s af s |
@@ -381,23 +381,44 @@ pedal = {
   s16\sd s\su s\sd s\su s4 |
   
   \barNumberCheck 9
-  \repeat unfold 8 { s8\sd s\su s\sd s\su | }
+  \repeat unfold 4 { s8\sd s\su s\sd s\su | }
+  \override SustainPedal.Y-offset = 2
+  s8\sd s\su s\sd s\su |
+  s8\sd s\su s\sd s\su |
+  s8\sd s\su s\sd s\su |
+  \revert SustainPedal.Y-offset
+  s8\sd s\su s\sd s\su |
   
   \barNumberCheck 17
-  \repeat unfold 8 { s8\sd s\su s\sd s\su | }
+  \override SustainPedal.Y-offset = 2
+  s8\sd s\su s\sd s\su |
+  s8\sd s\su s\sd s\su |
+  \revert SustainPedal.Y-offset
+  s8\sd s\su s\sd s\su |
+  s8\sd s\su s\sd s\su |
+  \override SustainPedal.Y-offset = 1.5
+  s8\sd s\su s\sd s\su |
+  s8\sd s\su s\sd s\su |
+  s8\tweak Y-offset -1.5 \sd s\su s\sd s\su |
+  s8\sd s\su s\sd s\su |
   
   \barNumberCheck 25
-  \repeat unfold 8 { s8\sd s\su s\sd s\su | }
+  s8\sd s\su s\sd s\su |
+  s8\sd s\su s\sd s\su |
+  \revert SustainPedal.Y-offset
+  \repeat unfold 6 { s8\sd s\su s\sd s\su | }
   
   \barNumberCheck 33
   s8\sd s\su s\sd s\su |
   s8\sd s\su s\sd s\su | 
   s8\sd s\su s4 |
   s8\sd s\su s4 |
-  \repeat unfold 4 { s8\sd s\su s\sd s\su | }
+  s8\sd s\su \override SustainPedal.Y-offset = 2 s\sd s\su |
+  \repeat unfold 3 { s8\sd s\su s\sd s\su | }
   
   \barNumberCheck 41
   \repeat unfold 4 { s8\sd s\su s\sd s\su | }
+  \revert SustainPedal.Y-offset
   s8 s4.\sd |
   s2 * 3 |
   

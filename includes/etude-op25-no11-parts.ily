@@ -17,6 +17,7 @@ slurShapeC = \shape #'((0 . 0) (0 . 0.25) (0 . 0.25) (0 . 0)) \etc
 slurShapeD = \shape #'((0 . 0) (0 . 0.25) (0 . 0.25) (0 . 0)) \etc
 slurShapeE = \shape #'((0 . 0) (0 . 0.5) (0 . 0.25) (0 . 0)) \etc
 slurShapeF = \shape #'((0 . 0) (0 . -6) (0 . -3) (0 . 5)) \etc
+slurShapeG = \shape #'((0 . 0) (0 . 0) (0 . 0.5) (0 . -1)) \etc
 
 pSlurShapeA = \shape #'((0 . 0) (0 . 0) (0 . 0) (0 . 0.5)) \etc
 
@@ -39,8 +40,6 @@ fingerPositionD =
   \tweak outside-staff-priority ##f
   \tweak Y-offset -0.75
   \etc
-  
-% beamPositionsA = \once \override Beam.positions = #'(-2.5 . -2.75)
 
 %%% Music %%%
 
@@ -62,7 +61,7 @@ rightHand = \relative {
   \global
   \tag layout { \tempo "Lento" }
   \tag midi   { \tempo "" 4 = 54 }
-  \fingeringInsideSlur
+  \override Fingering.avoid-slur = #'inside
   e'4 ( e8. e16  e4 f |
   e4 c e2)\fermata |
   <g, c e>4^( q8. q16 q4 <a c f> |
@@ -116,7 +115,7 @@ rightHand = \relative {
     d'16\slurShapeC ( a c f,-1 gs-4 f-2  a c,-1 e-4 c f a,  \ottava 0 
       cs-4 a d f, gs-4 f  a d,-1 e d f a,) |
     e'16-5( b-2 d-4 f-1 e' b  \ottava 1 d f e' b d f,  a-4 f g b, \ottava 0
-      a-4 f \ooa g b,-1 e'-5 g,-2 d'-5 f,-1) |
+      a-4 f g b,-1 e'-5 g,-2 d'-5 f,-1) |
     b16-4_3( g-2 _2 c-5 _4 e,-1_1 ds'-3 c-2  e-4 g,-1 \ottava 1 
       fs'-3 e-2 g-4 c,-1  as'-3 g-2 b-4 e,-1 c'-5 g-2  
       cs-4 e,-1 d'-5 g,-2 ds'-5_4 e,-1_1) |
@@ -182,7 +181,7 @@ rightHand = \relative {
       
     \barNumberCheck 49
     cs16( gs b d, cs' gs  b-4 d-1 cs' gs b d-1 \ottava 1  
-      \ooa cs'-4 \ooa gs b d,-1 cs-4 gs  \ottava 0 b d,-1 cs-4 gs b d,) |
+      cs'-4 gs b d,-1 cs-4 gs  \ottava 0 b d,-1 cs-4 gs b d,) |
     d'16-5( g, c c, f'-5 c  ef g, af' ef g c,  c' g b e, bf'-3 g-2
       a-5 ef-1 af-4 ef-2 g-3 c,-1) |
     f16-5( c ef gf,-1 f' c  ef-4 gf-1 f'-5 c ef gf-1  
@@ -281,8 +280,8 @@ rightHand = \relative {
   <a c e a>2-> <a b d a'>-> |
   <a c e a>1*1/2->
   \magnifyMusic 0.63 { \scaleDurations 2/14 {
-    \voiceOne \staffDown a,8([ b c d e fs gs a b \staffUp c d e fs gs a b c d e
-      fs gs a b c d e fs gs] |
+    \voiceOne \staffDown a,8\slurShapeG ([ b c d e fs gs a b \staffUp c d e fs
+      gs a b c d e fs gs a b c d e fs gs] |
   } }
   \oneVoice a4-.) r r2 |
 }
@@ -450,6 +449,8 @@ leftHand = \relative {
     f16 c e a, d a  c e, b' e, a c,
   }
   <e, e'>4->) <e, e'>-> |
+  
+  \barNumberCheck 89
   a16->( e' c' e, \articulationInsideSlur \repeat unfold 3 { a,-> e' c' e, } |
   a,16-> e' c' e,  e,-> e' c' e,  a,-> e' c' e,  c' e, c' e, |
   \repeat unfold 3 { a,16-> e' c' e, } a,-> e' c' e,) |
@@ -542,19 +543,20 @@ dynamics = {
 pedal = {
   \cutTime
   s1 * 4 |
-  s2\sd s8.. s32\su s4 |
+  s2\sd s8.. s32\tweak Y-offset 2 \su s4 |
   s1 |
   s2\sd s8.. s32\su s4 |
   s1 |
   
   \barNumberCheck 9
-  s2\sd s2\su |
-  s2\sd s2\su |
-  s2\sd s4...\su\sd s32\su |
+  s2\sd s2\tweak Y-offset 2 \su |
+  s2\sd s2\tweak Y-offset 2 \su |
+  s2\sd \override SustainPedal.Y-offset = 2 s4...\su\sd s32\su |
   s4\sd \tuplet 3/2 { s8 s\su s\sd } s8 s\su s4 |
-  s2\sd s8.. s32\su s4 |
+  \revert SustainPedal.Y-offset
+  s2\sd s8.. s32\tweak Y-offset 2 \su s4 |
   s1 |
-  s2\sd s\su |
+  s2\sd s\tweak Y-offset 2 \su |
   s1 |
   
   \barNumberCheck 17
@@ -564,69 +566,84 @@ pedal = {
   s4..\sd s16\su s2 |  
   s2.\sd s8 s\su |
   s2....\sd s32\su |
-  s2\sd s8.. s32\su s4 |
+  s2\sd s8.. s32\tweak Y-offset 2 \su s4 |
   s1 |
   
   \barNumberCheck 25
-  s2\sd s8.. s32\su s4 |
+  s2\sd s8.. s32\tweak Y-offset 2 \su s4 |
   s1 |
-  \repeat unfold 3 { s4..\sd s16\su s4..\sd s16\su | }
+  s4..\sd \override SustainPedal.Y-offset = 2 s16\su s4..\sd 
+    s16\tweak Y-offset -1 \su |
+  s4..\tweak Y-offset -1 \sd s16\su s4..\sd s16\su |
+  s4..\tweak Y-offset -1 \sd s16\su s4..\sd s16\su |
   s4..\sd s16\su s2 |
+  \revert SustainPedal.Y-offset
   s2\sd s8.. s32\su s4 |
   s1 |
   
   \barNumberCheck 33
   s2\sd s8.. s32\su s4 |
   s1 |
+  s4..\sd s16\tweak Y-offset 1 \su s4..\tweak Y-offset 1 \sd s16\su |
+  s4..\sd s16\tweak Y-offset 1 \su s4..\tweak Y-offset 1 \sd s16\su |
+  s2\sd s4... \override SustainPedal.Y-offset = 2 s32\su |
   s4..\sd s16\su s4..\sd s16\su |
-  s4..\sd s16\su s4..\sd s16\su |
-  s2\sd s4... s32\su |
-  s4..\sd s16\su s4..\sd s16\su |
+  \revert SustainPedal.Y-offset
   s4..\sd s16\su s4..\sd s16\su |
   s8..\sd s32\su s2. |
   
   \barNumberCheck 41
   s1 * 4 |
-  \repeat unfold 4 { s4..\sd s16\su s4..\sd s16\su | }
+  s4..\sd \override SustainPedal.Y-offset = 2 s16\su s4..\sd s16\su |
+  s4..\sd s16\su s4..\sd s16\su |
+  \revert SustainPedal.Y-offset
+  s4..\sd s16\su s4..\sd s16\su |
+  s4..\sd s16\su s4..\sd s16\su |
   
   \barNumberCheck 49
   s2\sd s8 s\su s4 |
   s1 |
   s2\sd s8 s\su s4 |
   s1 |
-  s4 s\sd s\su\sd s8..\su\sd s32\su |
+  s4 s\sd s\su\sd s8..\su\sd \override SustainPedal.Y-offset = 2 s32\su |
   s4\sd s\su\sd s\su\sd s8..\su\sd s32\su |
+  \revert SustainPedal.Y-offset
   s4..\sd s16\su s4..\sd s16\su |
   s4..\sd s16\su s4..\sd s16\su |
   
   \barNumberCheck 57
-  s4..\sd s16\su s4..\sd s16\su |
-  s4..\sd s16\su s4..\sd s16\su |
+  s4..\sd \override SustainPedal.Y-offset = 2 s16\su s4..\sd s16\su |
+  \revert SustainPedal.Y-offset
+  s4..\sd \override SustainPedal.Y-offset = 2 s16\su s4..\sd s16\su |
+  \revert SustainPedal.Y-offset
   s1 * 6 |
   
   \barNumberCheck 65
   s1 * 4 |
-  s2\sd s8.. s32\su s4 |
+  s2\sd s8.. s32\tweak Y-offset 2 \su s4 |
   s1 |
   s2\sd s8.. s32\su s4 |
   s1 |
   
   \barNumberCheck 73
-  s2\sd s2\su |
-  s2\sd s2\su |
-  s2\sd s4...\su\sd s32\su |
+  s2\sd s2\tweak Y-offset 2 \su |
+  s2\sd s2\tweak Y-offset 2 \su |
+  s2\sd \override SustainPedal.Y-offset = 2 s4...\su\sd s32\su |
   s4\sd \tuplet 3/2 { s8 s\su s\sd } s8 s\su s4 |
-  s2\sd s8.. s32\su s4 |
+  \revert SustainPedal.Y-offset
+  s2\sd s8.. s32\tweak Y-offset 2 \su s4 |
   s1 |
-  s2\sd s8.. s32\su s4 |
+  s2\sd s8.. s32\tweak Y-offset 2 \su s4 |
   s1 | 
   
   \barNumberCheck 81
   s4..\sd s16\su s4..\sd s16\su |
   s4..\sd s16\su s4..\sd s16\su |
-  s2.\sd s8..\su\sd s32\su |
+  s2.\offset X-offset -2 \sd \override SustainPedal.Y-offset = 2 s8..\su\sd 
+    s32\su |
+  \revert SustainPedal.Y-offset
   s1 *3 |
-  s2....\sd s32\su |
+  s2....\offset X-offset -2.5 \sd s32\tweak Y-offset 2 \su |
   s1 |
   
   \barNumberCheck 89
@@ -680,18 +697,21 @@ forceBreaks = {
   \grace { s8 } s1\noBreak s1\break\noPageBreak
   s1\noBreak s1\pageBreak
  
+  % page 7
   s1\noBreak s1\break\noPageBreak
   s1\noBreak s1\break\noPageBreak
   s1\noBreak s1\break\noPageBreak
   s1\noBreak s1\break\noPageBreak
   s1\noBreak s1\pageBreak
   
+  % page 8
   s1\noBreak s1\break\noPageBreak
   s1\noBreak s1\break\noPageBreak
   s1\noBreak s1\break\noPageBreak
   s1\noBreak s1\break\noPageBreak
   s1\noBreak s1\pageBreak
-     
+  
+  % page 9
   s1\noBreak s1\break\noPageBreak
   s1\noBreak s1\break\noPageBreak
   s1\noBreak s1\break\noPageBreak

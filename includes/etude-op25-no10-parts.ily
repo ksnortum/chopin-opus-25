@@ -8,11 +8,21 @@
 slurShapeA = \shape #'((0 . -2.5) (0 . -2.5) (0 . -2) (0 . -2)) \etc
 slurShapeB = \shape #'((1 . 1.5) (1 . 1.5) (0 . 0) (0 . 0)) \etc
 slurShapeC = \shape #'((0 . 0) (0 . 0.5) (0 . 0.5) (0 . 0)) \etc
-slurShapeD = \shape #'((0 . 0) (0 . 0) (0 . 1) (0 . 1)) \etc
+slurShapeD = \shape #'((0 . 0) (0 . 0) (0 . 1.5) (0 . 1)) \etc
 slurShapeE = \shape #'(
                         ()
                         ((0 . 1.25) (0 . 1.25) (0 . 1.5) (0 . 1.5))
                       ) \etc
+slurShapeF = \shape #'((0 . -0.5) (0 . 0) (0 . 0) (0 . 0)) \etc
+slurShapeG = \shape #'(
+                        ()
+                        ((0 . 0) (0 . 0) (-1 . -2) (0 . -2))
+                      ) \etc
+slurShapeH = \shape #'((0 . -0.5) (0 . 0) (0 . 0) (0 . 0)) \etc
+slurShapeI = \shape #'((0 . 0.5) (0 . 0) (0 . 0) (0 . 0)) \etc
+
+pSlurShapeA = \shape #'((0 . 0) (0 . -3) (0 . 0) (0 . 1)) \etc
+
 slurPositionA = \tweak positions #'(-4 . -4) \etc
 slurPositionB = \tweak positions #'(-5 . -5) \etc
 slurPositionC = \tweak positions #'(-3 . -3) \etc
@@ -116,7 +126,7 @@ rightHandUpper = \relative {
   \bar "||"
   \break
   \set Score.tempoHideNote = ##t
-  \tempo "Lento" 4 = 60
+  \tempo "Lento" 4 = 80
   \key b \major
   \time 3/4
   e''2.~( |
@@ -155,7 +165,8 @@ rightHandUpper = \relative {
   <css, css'>8( <ds ds'> <e e'> <ds ds'> <fs fs'> <e e'> |
   <es es'>8 <fs fs'> <gs gs'> <fs fs'> <a a'> <gs gs'> |
   <fss fss'>8[ <gs gs'> <as as'> <gs gs'> <b b'>8. <as as'>16] |
-  <as as'>8[ <gs gs'> <fss fss'> <gs gs'>] <b b'>8.) r16\fermata |
+  <as as'>8[ <gs gs'> <fss fss'> <gs gs'>] <b b'>8.) \tempo 4 = 10 
+    r16\fermata \tempo 4 = 80 |
   \acciaccatura { ds8 } <ds ds'>8( <cs cs'> <b b'> <as as'> <b b'> <gs gs'> |
   <as as'>8 <gs gs'> <fs fs'> <es es'> <fs fs'> <ds ds'!> |
   
@@ -183,7 +194,8 @@ rightHandUpper = \relative {
   
   \barNumberCheck 65
   <fss fss'>8[ <gs gs'> <as as'> <gs gs'> <b b'>8. <as as'>16] |
-  <as as'>8[ <gs gs'> <fss fss'> <gs gs'>] <b b'>8.) r16\fermata |
+  <as as'>8[ <gs gs'> <fss fss'> <gs gs'>] <b b'>8.) \tempo 4 = 10 r16\fermata
+    \tempo 4 = 80 |
   <ds ds'>8( <cs cs'> <b b'> <as as'> <b b'> <gs gs'> |
   <as as'>8 <gs gs'> <fs fs'> <es es'> <fs fs'> <ds ds'!> |
   <gs gs'>8 <fs fs'> <e e'> <ds ds'> <e e'> <cs cs'> |
@@ -210,7 +222,8 @@ rightHandUpper = \relative {
   <css css'>8( <ds ds'> <e e'> <ds ds'> <fs fs'> <e e'> |
   <es es'>8 <fs fs'> <gs gs'> <fs fs'> <a a'> <gs gs'> |
   <fss fss'>8[ <gs gs'> <as as'> <gs gs'> <b b'>8. <as as'>16] |
-  <as as'>8[ <gs gs'> <fss fss'> <gs gs'>] <b b'>8.) r16\fermata |
+  <as as'>8[ <gs gs'> <fss fss'> <gs gs'>] <b b'>8.) \tempo 4 = 10 r16\fermata
+    \tempo 4 = 80 |
   <ds ds'>8( <cs cs'> <b b'> <as as'> <b b'> <gs gs'> |
   <as as'>8 <gs gs'> <fs fs'> <es es'> <fs fs'> <ds ds'> |
   
@@ -229,10 +242,10 @@ rightHandUpper = \relative {
   s2. |
   cs'2.~ |
   cs4) \oneVoice r4 r |
-  R2. | % 4 = 60
-  \tempo "" 4 = 84
+  R2. |
+  \tempo 4 = 100
   <g, g'>8^( <fs fs'> <e e'> <ds ds'> <e e'> <cs cs'> |
-  \tempo "" 4 = 108
+  \tempo 4 = 140
   <g' g'>8 <fs fs'> <e e'> <ds ds'> <e e'> <cs cs'>) |
   
   \bar "||"
@@ -341,7 +354,7 @@ rightHandLower = \relative {
   
   \barNumberCheck 57
   c4 c8 b^2 b4 |
-  b8 as^2 as4 as4( |
+  b8 as^2 as4 as4\slurShapeF ( |
   b4 as gs |
   gs4. fs8 ds4) |
   s2. * 4 |
@@ -357,7 +370,7 @@ rightHandLower = \relative {
   css2 ds4 |
   cs2 d4 |
   c4 c8 b b4 |
-  b8 as as4 as4( |
+  b8 as as4 as4\slurShapeH ( |
   b4 as gs |
   gs4. fs8 ds4) |
   
@@ -505,7 +518,7 @@ leftHandUpper = \relative {
   
   \key b \major
   \time 3/4
-  e'''2.~( |
+  e'''2.~\slurShapeI ( |
   e4 fs cs) |
   <b, fs'>2( \stemDown <e, gs'>4 |
   <fs e' as>4 \voiceThree fs'2) |
@@ -559,7 +572,7 @@ leftHandUpper = \relative {
   s2. * 2 |
   \voiceThree
   gs,2 s4 |
-  fs2.~\( |
+  fs2.~\pSlurShapeA \( |
   fs2 a4~ |
   a8 gs-1( g-1) fs e4\) |
   
@@ -641,7 +654,7 @@ leftHandUpper = \relative {
       <b b'> <as as'> <b b'>  <bs bs'> <cs cs'> <d d'> |
   }
   <fs cs' fs>2 <fs, cs' fs> |
-  <b fs' b>1\fermata |
+  <b, fs' b>1\fermata |
 }
 
 leftHandLower = \relative {
@@ -717,7 +730,7 @@ leftHandLower = \relative {
   \barNumberCheck 65
   es2.~ |
   es2~ es8.) s16 |
-  <e' g>4^1^2( <ds fs>8^1^3 <css es> <ds fs> <b d>^2^4 |
+  <e' g>4^1^2\slurShapeG ( <ds fs>8^1^3 <css es> <ds fs> <b d>^2^4 |
   <cs e>4^1^3 <as cs>8^2^3 <gss bs>^2^4 <ass cs>^1^3 <fs a> |
   <bs, ds'>4 <cs cs'> <e g> |
   fs,4 b8) r r4 |
@@ -792,7 +805,7 @@ dynamics = {
   \barNumberCheck 9
   s1 * 2 |
   s1\cresc |
-  s1 |
+  s2... s16\! |
   s1\ff |
   s1 * 3 |
   
@@ -811,7 +824,7 @@ dynamics = {
   s1 |
   
   \time 3/4
-  s2.\p |
+  s2.\tweak X-offset -0.5 \p |
   s2. |
   s2.^\benLegato |
   s2. |
@@ -880,7 +893,7 @@ dynamics = {
   s2. * 3 |
   s2.\cresc |
   s2 s8s \! |
-  s2.^\accelerando |
+  s2.\tweak X-offset -1 ^\accelerando |
   s2. |
   
   \cutTime
@@ -888,7 +901,7 @@ dynamics = {
   
   \barNumberCheck 105
   s2. s4\cresc |
-  s1 |
+  s2... s16\! |
   s1\ff |
   s1 * 4 |
   \override DynamicTextSpanner.style = #'none
@@ -948,7 +961,7 @@ pedal = {
   
   \barNumberCheck 73
   s2. * 6 |
-  s2 s8\sd s\su |
+  s2 s8.\sd s16\su |
   s2. |
   
   \barNumberCheck 81

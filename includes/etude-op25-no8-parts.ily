@@ -17,7 +17,6 @@ global = {
   \time 4/4
   \key df \major
   \accidentalStyle piano
-  \override Staff.Fingering.avoid-slur = #'inside
 }
 
 rightHand = \relative {
@@ -226,7 +225,8 @@ dynamics = {
   s4 s2.\cresc
   
   \barNumberCheck 33
-  s1 * 2 |
+  s1 |
+  s2... s16\! |
   s4\f s2.\ff |
   s1 |
 }
@@ -283,7 +283,10 @@ etudeEightMusic = \score {
     opus = "Opus 25, No 8"
   }
   \keepWithTag layout
-  \new PianoStaff \with { instrumentName = \markup \huge "No. 8" } <<
+  \new PianoStaff \with { 
+    instrumentName = \markup \huge "No. 8" 
+    \override Fingering.avoid-slur = #'inside
+  } <<
     \new Staff = "upper" \rightHand
     \new Dynamics \dynamics
     \new Staff = "lower" \leftHand

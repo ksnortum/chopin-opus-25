@@ -55,9 +55,7 @@ tweakInsideSlur =
   \etc
 
 insideSlur = \tweak avoid-slur #'inside \etc
-
 articulationInsideSlur = \override Script.avoid-slur = #'inside
-fingeringInsideSlur = \override Staff.Fingering.avoid-slur = #'inside
     
 fingeringInsideStaffOn = \override Fingering.staff-padding = #'()
 fingeringInsideStaffOff = \revert Fingering.staff-padding
@@ -99,9 +97,7 @@ conForza = \markup \large \italic \whiteout \pad-markup #0.5 "con forza"
 sottoVoce = \markup \large \italic "sotto voce"
 ten = \markup \large \italic "ten."
 crescMarkup = \markup \large \italic "cresc."
-fMarc = \markup { 
-  \dynamic f \large \italic \whiteout \pad-markup #0.5 "marc." 
-}
+fMarc = \markup { \dynamic f \large \italic "marc." }
 benLegato = \markup \large \italic "ben legato"
 accelerando = \markup \large \italic "accelerando"
 piuFPossibile = \markup { 
@@ -109,6 +105,8 @@ piuFPossibile = \markup {
 }
 fRisoluto = \markup { \dynamic f \large \italic "risoluto" }
 ilPuiForte = \markup \large \italic "il più forte possibile"
+poco = \markup \large \italic "poco"
+aPoco = \markup \large \italic "a poco"
 
 % Fingering
 

@@ -232,7 +232,7 @@ leftHand = \relative af,, {
     \nssl af,16 ef' \ns df' ef,  af, ef' \ns c' ef,
       af, ef' \ns bf' ef,  af, ef' \ns af ef |
     \nssl ef,16 g' c g  c, g' c g
-      \nssl f, d' c' d,  \scaleDurations 4/5 { \nssl g, d' b' g d }
+      \nssl f, d' c' d,  \scaleDurations 4/5 { \nssl g, d' b' g d } |
     \scaleDurations 2/3 {
       \nssl c16 e g c g e  c f af b af f
         c f af d af f  c e gs d' gs, e |
@@ -371,86 +371,67 @@ dynamics = {
 
 pedal = {
   \partial 4 s4
-  s1\sustainOn \movePedalA |
-  s4 s\sustainOff\sustainOn s4... s32\sustainOff \revertPedal |
-  s2\sustainOn s4... s32\sustainOff |
-  s2\sustainOn s4...\sustainOff\sustainOn s32\sustainOff |
-  s2.\sustainOn \movePedalB s8..\sustainOff\sustainOn s32\sustainOff |
-  s4\sustainOn s\sustainOff\sustainOn s\sustainOff\sustainOn 
-    s8..\sustainOff\sustainOn s32\sustainOff \revertPedal |
-  s2\sustainOn s4\sustainOff\sustainOn s8.. s32\sustainOff |
-  s4\sustainOn s\sustainOff\sustainOn s\sustainOff\sustainOn 
-    s8..\sustainOff\sustainOn s32\sustainOff |
+  s1\sd \movePedalA |
+  s4 s\su\sd s4... s32\su \revertPedal |
+  s2\sd s4... s32\su |
+  s2\sd s4...\su\sd s32\su |
+  s2.\sd \movePedalB s8..\su\sd s32\su |
+  s4\sd s\su\sd s\su\sd s8..\su\sd s32\su \revertPedal |
+  s2\sd s4\su\sd s8.. s32\su |
+  s4\sd s\su\sd s\su\sd 
+    s8..\su\sd s32\su |
     
   \barNumberCheck 9
-  s1 \sustainOn \movePedalC |
-  s4 s\sustainOff\sustainOn s4... s32\sustainOff \revertPedal |
-  s2\sustainOn s4\sustainOff\sustainOn s8.. s32\sustainOff |
-  s2\sustainOn s4\sustainOff\sustainOn s8.. s32\sustainOff |
-  s2.\sustainOn \movePedalD s8..\sustainOff\sustainOn s32\sustainOff |
-  s2\sustainOn s4\sustainOff\sustainOn s8.. s32\sustainOff \revertPedal |
-  s4\sustainOn s\sustainOff\sustainOn s s8..\sustainOff\sustainOn 
-    s32\sustainOff |
-  s4\sustainOn s\sustainOff\sustainOn s\sustainOff\sustainOn 
-    s8..\sustainOff\sustainOn s32\sustainOff |
+  s1 \sd \movePedalC |
+  s4 s\su\sd s4... s32\su \revertPedal |
+  s2\sd s4\su\sd s8.. s32\su |
+  s2\sd s4\su\sd s8.. s32\su |
+  s2.\sd \movePedalD s8..\su\sd s32\su |
+  s2\sd s4\su\sd s8.. s32\su \revertPedal |
+  s4\sd s\su\sd s s8..\su\sd s32\su |
+  s4\sd s\su\sd s\su\sd s8..\su\sd s32\su |
     
   \barNumberCheck 17
-  s4\sustainOn s s\sustainOff\sustainOn s8..\sustainOff\sustainOn 
-    s32\sustainOff |
-  s4\sustainOn s\sustainOff\sustainOn s\sustainOff\sustainOn 
-    s8..\sustainOff\sustainOn s32\sustainOff |
-  s4\sustainOn s s\sustainOff\sustainOn s8..\sustainOff\sustainOn 
-    s32\sustainOff |
-  s4\sustainOn s\sustainOff\sustainOn s\sustainOff\sustainOn 
-    s8..\sustainOff\sustainOn s32\sustainOff |
-  s4\sustainOn s s\sustainOff\sustainOn s8..\sustainOff\sustainOn 
-    \movePedalE s32\sustainOff |
-  s4\sustainOn s\sustainOff\sustainOn s s8..\sustainOff\sustainOn 
-    s32\sustainOff \revertPedal
+  s4\sd s s\su\sd s8..\su\sd s32\su |
+  s4\sd s\su\sd s\su\sd s8..\su\sd s32\su |
+  s4\sd s s\su\sd s8..\su\sd s32\su |
+  s4\sd s\su\sd s\su\sd s8..\su\sd s32\su |
+  s4\sd s s\su\sd s8..\su\sd \movePedalE s32\su |
+  s4\sd s\su\sd s s8..\su\sd s32\su \revertPedal
   \repeat unfold 2 {
-    s4\sustainOn s\sustainOff\sustainOn s s8..\sustainOff\sustainOn 
-      s32\sustainOff
+    s4\sd s\su\sd s s8..\su\sd s32\su
   }
   
   \barNumberCheck 25
-  \movePedalF s4\sustainOn s s\sustainOff\sustainOn s8..\sustainOff\sustainOn 
-    s32\sustainOff \revertPedal |
-  s4\sustainOn \movePedalG s\sustainOff\sustainOn s4... s32\sustainOff 
-    \revertPedal |
-  s4\sustainOn s\sustainOff\sustainOn s4... s32\sustainOff |
-  s4\sustainOn s s\sustainOff\sustainOn s8..\sustainOff\sustainOn 
-    s32\sustainOff |
-  \movePedalH s4\sustainOn s\sustainOff\sustainOn s\sustainOff\sustainOn s8.. 
-    s32\sustainOff \revertPedal |
-  s4\sustainOn s\sustainOff\sustainOn s\sustainOff\sustainOn s8.. 
-    s32-\tweak Y-offset 3 \sustainOff |
-  s4\sustainOn s4\sustainOff\sustainOn s4... s32\sustainOff |
-  s4\sustainOn s s\sustainOff\sustainOn s8..\sustainOff\sustainOn 
-    s32\sustainOff |
+  \movePedalF s4\sd s s\su\sd s8..\su\sd s32\su \revertPedal |
+  s4\sd \movePedalG s\su\sd s4... s32\su \revertPedal |
+  s4\sd s\su\sd s4... s32\su |
+  s4\sd s s\su\sd s8..\su\sd s32\su |
+  \movePedalH s4\sd s\su\sd s\su\sd s8.. s32\su \revertPedal |
+  s4\sd s\su\sd s\su\sd s8.. s32-\tweak Y-offset 3 \su |
+  s4\sd s4\su\sd s4... s32\su |
+  s4\sd s s\su\sd s8..\su\sd s32\su |
     
   \barNumberCheck 33
-  s4\sustainOn s s\sustainOff\sustainOn s8.. s32 \sustainOff |
-  s4\sustainOn s s\sustainOff\sustainOn s8.. s32-\tweak Y-offset 3 
-      \sustainOff |
-  s4\sustainOn s s\sustainOff\sustainOn s8.. s32 \sustainOff |
+  s4\sd s s\su\sd s8.. s32 \su |
+  s4\sd s s\su\sd s8.. s32-\tweak Y-offset 3 \su |
+  s4\sd s s\su\sd s8.. s32 \su |
   \repeat unfold 4 {
-    s4\sustainOn s\sustainOff\sustainOn s4... s32\sustainOff |
+    s4\sd s\su\sd s4... s32\su |
   }
-  s4\sustainOn s\sustainOff\sustainOn s s8..\sustainOff\sustainOn 
-    s32\sustainOff |
+  s4\sd s\su\sd s s8..\su\sd s32\su |
   
   \barNumberCheck 41
-  s4\sustainOn s\sustainOff\sustainOn s\sustainOff\sustainOn 
-    s8..\sustainOff\sustainOn s32\sustainOff |
-  s1\sustainOn |
-  s2.... s32-\tweak Y-offset 4 \sustainOff |
-  s1\sustainOn |
+  s4\sd s\su\sd s\su\sd s8..\su\sd s32\su |
+  s1\sd |
+  s2.... s32-\tweak Y-offset 4 \su |
+  s1\sd |
   s1 * 2 |
-  s2.... \movePedalI s32\sustainOff |
-  s4\sustainOn s8 s\sustainOff \revertPedal s2 |
+  s2.... \movePedalI s32\su |
+  s4\sd s8 s\su \revertPedal s2 |
   
   \barNumberCheck 49
-  s2\sustainOn s\sustainOff |
+  s2\sd s\su |
 }
 
 forceBreaks = {
@@ -476,6 +457,7 @@ etudeOneMusic = \score {
   \new PianoStaff \with { 
     instrumentName = \markup \huge "No. 1" 
     connectArpeggios = ##t
+    \override Fingering.avoid-slur = #'inside
   } <<
     \new Staff = "upper" \rightHand
     \new Dynamics \dynamics

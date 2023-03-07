@@ -12,6 +12,10 @@ lengthenArp =
   \tweak X-offset -1
   \tweak vertical-skylines ##f
   \etc
+  
+slurPositionA = \tweak positions #'(3 . 3) \etc
+slurPositionB = \tweak positions #'(0 . 5) \etc
+slurPositionC = \once \override Slur.positions = #'(1 . 0)
 
 %%% Music %%%
 
@@ -85,12 +89,13 @@ rightHandUpper = \relative {
   \barNumberCheck 57
   a4.) e'4( a gs8-\lengthenTieA ~ |
   gs8 g4 fs f b,8~ |
-  b8 a4) f( <bf d> b8~ |
+  b8 a4) f\slurPositionA ( <bf d> b8~ |
   b8 <c, a'>4) <e a e'>( <f bf d> <d gs>8->~
   gs8 a2) c4( bf8~ |
   bf8 a2)^\rall c4( bf8) |
   \tempo "Lento"
-  \acciaccatura { d,8-\lengthenArp \arpeggio } bf'1(~ |
+  \acciaccatura { \slurPositionC d,8-\lengthenArp \arpeggio } 
+    bf'1\slurPositionB (~ |
   bf2 d4 cs |
   
   \barNumberCheck 65
@@ -461,7 +466,10 @@ etudeFourMusic = \score {
     opus = "Opus 25, No 4"
   }
   \keepWithTag layout
-  \new PianoStaff \with { instrumentName = \markup \huge "No. 4" } <<
+  \new PianoStaff \with { 
+    instrumentName = \markup \huge "No. 4" 
+    \override Script.avoid-slur = #'inside
+  } <<
     \new Staff = "upper" \rightHand
     \new Dynamics \dynamics
     \new Staff = "lower" \leftHand

@@ -25,12 +25,16 @@ pedalMoveG = \override SustainPedal.Y-offset = 2
 pedalMoveH = \override SustainPedal.Y-offset = 2
 pedalMoveI = \override SustainPedal.Y-offset = 3
 pedalMoveJ = \override SustainPedal.Y-offset = 3
-pedalMoveK = \override SustainPedal.Y-offset = 1
+pedalMoveK = \override SustainPedal.Y-offset = 2
 pedalMoveL = \override SustainPedal.Y-offset = 2
-pedalMoveM = \override SustainPedal.Y-offset = 2
+pedalMoveM = \override SustainPedal.Y-offset = 4
 pedalMoveN = \override SustainPedal.Y-offset = 2
 pedalMoveO = \override SustainPedal.Y-offset = 2
+pedalMoveP = \override SustainPedal.Y-offset = 4
+pedalMoveQ = \override SustainPedal.Y-offset = 2
+pedalMoveR = \override SustainPedal.Y-offset = 2
 pedalMoveOff = \revert SustainPedal.Y-offset
+
 shiftRightA = \once \override NoteColumn.force-hshift = 0.5
 
 tempoMoveA = {
@@ -58,21 +62,28 @@ trillSpanUp =
 
 beamPositionsA = \tweak positions#'(3.5 . 3) \etc
 
-slurPositionsA = \tweak positions #'(1 . 1) \etc
-slurPositionsB = \tweak positions #'(2 . 2) \etc
-slurPositionsC = \tweak positions #'(3 . 3) \etc
-slurPositionsD = \tweak positions #'(3 . 3) \etc
+slurPositionsA = \tweak positions #'(2 . 1) \etc
+slurPositionsB = \tweak positions #'(3 . 3) \etc
+slurPositionsC = \tweak positions #'(4 . 3) \etc
+slurPositionsD = \tweak positions #'(4 . 4) \etc
+slurPositionsE = \tweak positions #'(5 . 0) \etc
 
 slurShapeA = \shape #'((0 . 0) (0 . 0.5) (0 . 0.5) (0 . 0)) \etc
 slurShapeB = \shape #'((0 . -1) (0 . 0.75) (0 . 0.75) (0 . -3)) \etc
 slurShapeC = \shape #'(
                         ((0 . 1) (0 . 0) (0 . 0) (0 . 0))
-                        ((0 . 0) (0 . 1) (0 . 1.5) (0 . -4))
+                        ((0 . 0) (0 . 1) (0 . 2) (0 . -4))
                       ) \etc
 slurShapeD = \shape #'((0 . 0) (0 . 0) (0 . -3) (-1.5 . 4)) \etc
 slurShapeE = \shape #'((0 . 0) (0 . 0) (0 . -4) (-1.5 . 5)) \etc
 slurShapeF = \shape #'((0 . 0) (0 . 0.5) (0 . 0.5) (0 . 1)) \etc
 slurShapeG = \shape #'((0 . 0) (0 . 1) (0 . 0.5) (0 . 0)) \etc
+slurShapeH = \shape #'((0 . 0) (0 . 0) (0 . -4) (-1.5 . 5)) \etc
+slurShapeI = \shape #'(
+                        ((0 . -1) (0 . 0) (0 . 0) (0 . 0))
+                        ((0 . 0) (0 . 0) (-0.5 . 0) (-1.5 . 5.5))
+                      ) \etc
+slurShapeJ = \shape #'((0 . -1) (0 . 1) (0 . 0) (0 . -3)) \etc
 
 tieShapeA = \shape #'((0 . -0.25) (0 . -0.5) (0 . -0.5) (0 . 0)) \etc
 
@@ -147,7 +158,7 @@ rightHandUpper = \relative {
   <as f'>8[ b <cs b'> d <e d'> f]) |
   \acciaccatura { <e g c>8 } \ottava 1 e''4-. \ottava 0 r r |
   \acciaccatura { <b,, e b'>8 } b''4-. r r\fermata |
-  \acciaccatura { <b,, ds b'>8 } b''4-. r r\fermata |
+  \acciaccatura { <b,, ds b'>8 } b''4-. r r\fermata | \break
   \bar "||"
   \key e \major
   \set Score.tempoHideNote = ##t
@@ -164,7 +175,7 @@ rightHandUpper = \relative {
     a,8-1 <bs a'> ds  a-1 <bs, a'>-5 ds  a-1 <bs, gs'>-5-2 ds)-3 |
     
     \barNumberCheck 49
-    gs,8-1( <a e'>-5-2 cs-4  e <a e'> cs  e <a e'> cs |
+    gs,8-1-\slurShapeJ ( <a e'>-5-2 cs-4  e <a e'> cs  e <a e'> cs |
     \ottava 1 e8 <gs e'> b  e,-1 <e b'>-5-2 gs  b,-1 <b gs'> e |
     \ottava 0 gs,8 <gs ds'> b  ds, <ds b'> gs  fss, <as fss'> ds |
     gs,8 <b gs'> ds  ds, <gs ds'> b  b, <ds b'> fs) |
@@ -240,7 +251,7 @@ rightHandUpper = \relative {
   b,16 <e b'> gs b,  <e b'> gs b, <e b'>  gs b, <e b'> gs |
   
   \barNumberCheck 97
-  b,16 <e b'> gs b,  <e b'> gs b, <e b'>  gs b, <e b'> gs) |
+  b,16 <e b'> gs b,  <e b'> gs b, <e b'>  gs b, <e b'> gs) | \break
   \bar "||"
   \key e \minor
   \tempo "Tempo I."
@@ -288,7 +299,7 @@ rightHandUpper = \relative {
   <e,,, e'>2.~ |
   q2.~ |
   q2.~ |
-  q2.~ |
+  q2.~ | \break
   \shiftRightA q2.~ |
   q2.~ |
   q2.~ |
@@ -396,7 +407,7 @@ rightHandLower = \relative {
   \acciaccatura { a8 } gs2. |
   \acciaccatura { a8 } gs4 \acciaccatura { a8 } gs2 |
   \acciaccatura { a8 } gs4 \acciaccatura { a8 } gs2 |
-  \acciaccatura { a8 } gs2.-\trillSpanUp\startTrillSpan |
+  gs2.-\trillSpanUp\startTrillSpan |
   gs2. |
   gs2. |
   
@@ -497,7 +508,7 @@ leftHandUpper = \relative {
   <ds ds'>2 <ds, ds'>4 |
   <gs gs'>2.) |
   \oneVoice
-  <a a'>2.( |
+  <a a'>2.^( |
   <gs gs'>4. <a a'>8 <gs gs'>4 |
   <fs fs'>2 gs4 |
   <e e'>2) r4 |
@@ -535,10 +546,10 @@ leftHandUpper = \relative {
   b4 as a) |
   
   \barNumberCheck 89
-  gs4( b ds8. cs16 |
+  gs4-\slurShapeH ( b ds8. cs16 |
   cs2 s16 \once \hideNotes cs8.) |
-  cs,2.*1/3( gs'4 b8. a16 |
-  a2) d,4\rest |
+  cs,2.*1/3-\slurShapeI ( gs'4 b8. a16 |
+  a2 s16 \once \hideNotes a8.) | 
   e4( ds cs |
   b4 e gs |
   \oneVoice
@@ -597,7 +608,7 @@ leftHandUpper = \relative {
   \acciaccatura { cs8 } b2. |
   \acciaccatura { cs8 } b4 \acciaccatura { cs8 } b2 |
   \acciaccatura { cs8 } b4 \acciaccatura { cs8 } b2 |
-  \acciaccatura { cs8 } b2.\startTrillSpan |
+  b2.\startTrillSpan |
   b2. |
   b2. |
   
@@ -681,7 +692,7 @@ leftHandLower = \relative {
   <e, b'>4 r r |
   <ds' fs>2 d4\rest |
   cs,4 r r |
-  bs'2 s4 |
+  bs'2 d,4\rest |
   a4 r r |
   e2 r4 |
   s2. * 2 |
@@ -725,7 +736,7 @@ leftHandLower = \relative {
   e2. |
   \cadenzaOn s2. 
   \magnifyMusic #2/3 { 
-    e4^( b' e gs b \staffUp e fs gs b e fs gs b e fs gs2)^\fermata 
+    e'4^( b' e gs b-1 \staffUp e fs gs-4 b-1 e fs gs-4 b-1 e fs gs2)^\fermata 
   }
   \bar "|."
 }
@@ -907,7 +918,7 @@ pedal = {
   s2\sd \pedalMoveL s4\su |
   s4\sd s8. s16\su \pedalMoveOff s4 |
   s2\sd s4\su |
-  s2\sd s4\su |
+  \pedalMoveP s2\sd s4\su | \pedalMoveOff
   s2. |
   s2.\sd |
   s2. * 2 |
@@ -921,27 +932,31 @@ pedal = {
   
   \barNumberCheck 105
   s4\sd s\su s8.\sd s16\su |
-  \repeat unfold 3 { s4\sd s16 s8.\su s4 | } 
-  s8.\sd s16\su s4 s8.\sd s16\su |
+  s4\sd s16 s8.\su s4 |
+  s4\sd s16 s8.\su s4 |
+  \pedalMoveQ s4\sd s16 s8.\su s4 |
+  s8.\sd s16\su s4 s8.\sd s16\su \pedalMoveOff |
   s4\sd s8.\su\sd s16\su s8.\sd s16\su |
   s4\sd s\su s |
   s2. |
   
   \barNumberCheck 113
   s2. |
-  \repeat unfold 3 { s2\sd s8 s\su | }
+  s2\tweak Y-offset 1.5 \sd s8 s\su |
+  s2\sd s8 s\su |
+  s2\sd s8 s\su |
   s2\sd s8 \pedalMoveO s\su |
   s2\sd s4\su \pedalMoveOff |
   s2\sd s4\su |
   s2\sd s4\su |
   
   \barNumberCheck 121
-  s2\sd \pedalMoveM s4\su |
-  s2\sd s4\su \pedalMoveOff |
+  s2\sd s4\tweak Y-offset 2 \su |
+  \pedalMoveM s2\sd s4\su \pedalMoveOff |
   s2. |
-  \grace { s8\sd } s2. |
+  \grace { \pedalMoveR s8\sd } s2. |
   s2 s4\su |
-  \grace { s8\sd } s2 s4\su |
+  \grace { s8\sd } \pedalMoveOff s2 s4\su |
   s2. |
   \pedalMoveN \grace { s8\sd } s2. |
   
@@ -957,80 +972,49 @@ pedal = {
 
 forceBreaks = {
   \partial 4 s4 
-  s2. * 3 \break
-  s2. * 4 \break
-  s2.
+  \repeat unfold 3 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 4 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 4 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 4 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 4 { s2.\noBreak } s2.\pageBreak
   
-  \barNumberCheck 9
-  s2. * 3 \break
-  s2. * 4 \break
-  s2.
+  % page 2
+  \repeat unfold 4 { s2.\noBreak } s2.\break\noPageBreak
+  \grace { s8 } \repeat unfold 5 { s2.\noBreak } s2.\break\noPageBreak
+  \grace { s8 } \repeat unfold 4 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 3 { s2.\noBreak } s2.\pageBreak
   
-  \barNumberCheck 17
-  s2. * 3 \pageBreak
-  s2. * 4 \break
-  s2.
+  % page 3
+  \repeat unfold 3 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 3 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 3 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 3 { s2.\noBreak } s2.\pageBreak
   
-  \barNumberCheck 25
-  s2. * 4 \break
-  \grace { s8 } s2. * 4
+  % page 4
+  \repeat unfold 3 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 3 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 3 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 3 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 3 { s2.\noBreak } s2.\pageBreak
   
-  \barNumberCheck 33
-  s2. * 2 \break
-  \grace { s8 } s2. * 5 \break
-  s2. 
+  % page 5
+  \repeat unfold 3 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 3 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 2 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 2 { s2.\noBreak } s2.\pageBreak
   
-  \barNumberCheck 41
-  s2. * 4 \pageBreak
-  s2. * 4 \break
+  % page 6
+  \repeat unfold 2 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 4 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 4 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 4 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 4 { s2.\noBreak } s2.\pageBreak
   
-  \barNumberCheck 49
-  s2. * 4 \break
-  s2. * 4 \break 
-  
-  \barNumberCheck 57
-  s2. * 4 \break
-  s2. * 4 \pageBreak
-  
-  \barNumberCheck 65
-  s2. * 4 \break \noPageBreak
-  s2. * 4 \break \noPageBreak
-  
-  \barNumberCheck 73
-  s2. * 4 \break \noPageBreak
-  s2. * 4 \break \noPageBreak
-  
-  \barNumberCheck 81
-  s2. * 4 \pageBreak
-  s2. \noBreak s2. \noBreak s2. \noBreak s2. \break \noPageBreak
-  
-  \barNumberCheck 89
-  s2. \noBreak s2. \noBreak s2. \break \noPageBreak
-  s2. \noBreak s2. \noBreak s2. \break \noPageBreak
-  s2. \noBreak s2. \noBreak
-  
-  \barNumberCheck 97
-  s2. \break \noPageBreak % Tempo I
-  s2. \noBreak s2. \noBreak s2. \noBreak s2. \break \noPageBreak
-  s2. \noBreak s2. \noBreak s2. \noBreak
-  
-  \barNumberCheck 105
-  s2. \pageBreak
-  s2. \noBreak s2. \noBreak s2. \noBreak s2. \break \noPageBreak
-  s2. \noBreak s2. \noBreak s2. \noBreak
-  
-  \barNumberCheck 113
-  s2. \break \noPageBreak
-  s2. * 5 \break \noPageBreak
-  s2. * 2
-  
-  \barNumberCheck 121
-  s2. * 3 \break \noPageBreak
-  \grace { s8 } s2. * 5
-  
-  \barNumberCheck 129
-  s2. * 4 \break \noPageBreak
-  \grace { s8 } s2. *  5
+  % page 7
+  \repeat unfold 3 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 4 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 6 { s2.\noBreak } s2.\break\noPageBreak
+  \repeat unfold 10 { s2.\noBreak } s2\pageBreak
 }
 
 etudeFiveMusic = \score {
