@@ -23,5 +23,8 @@ see errors in the output to the screen.  I have not been able to track down the 
 seems uneffected.  Strangely, if you comment out the `omit BarNumber` line in `header-paper.ily`,
 the problem goes away.
 
+## Licensing
+This work is licensed under CC BY-SA 4.0. To view a copy of this license, visit [http://creativecommons.org/licenses/by-sa/4.0/](http://creativecommons.org/licenses/by-sa/4.0/).
+
 ## Questions, problems, etc.
 If you have a question about these source files or how to produce a PDF, you can contact me at: **knute (at) snortum (dot) net**
