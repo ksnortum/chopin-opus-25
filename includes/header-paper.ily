@@ -58,9 +58,8 @@
 \layout {
   \context {
     \Score
-    % \omit BarNumber % <-- uncomment
+    \omit BarNumber
     \override Slur.details.free-head-distance = 1
-    % \override PhrasingSlur.details.free-head-distance = 1
   }
   \context {
     \PianoStaff
