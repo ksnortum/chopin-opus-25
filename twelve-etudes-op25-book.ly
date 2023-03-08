@@ -1,5 +1,7 @@
 % Go to https://github.com/ksnortum/chopin-opus-25.git for the latest edits
 % or to report a problem or request a change.
+%
+% See README.md for comments about errors when compiling this work.
 
 \version "2.24.1"
 \language "english"
