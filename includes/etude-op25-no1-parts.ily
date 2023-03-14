@@ -64,7 +64,7 @@ rightHand = \relative ef'' {
       \ns bf'16 c, ef ef, c' ef  \ns af c, ef ef, c' ef
         \ns af-5 c, e-4 e, c' e  \ns af c, e e, c' e)-3 |
       \ns af16( df,-2 f-4 af, df f  \ns af df, f af, df f
-        \ns af df, f af, df f-3  \ns bf df, f af, df f |
+        \ns af df, f af, df f-3  \ns bf df, f g, df' f |
       \ns c'16 c,-2 f-4 g, c f  \ns bf c, e-3 g, c e
         \ns af c, f-4 af, c f-4  \ns f-5 cf-2 ef f, cf' ef) |
       \stemNeutral
