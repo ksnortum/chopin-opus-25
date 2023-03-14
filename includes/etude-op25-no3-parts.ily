@@ -506,7 +506,7 @@ leftHandUpper = \relative {
   ds'16( fs, b,8)  es'16( b cs,8)  as''16( e fs,8) |
   ds'16( fs, b,8)  ds''16( fs, b,8)  \clef treble ds''16( fs, b,8)
   \clef bass as16( cs, fs,8)  a'16( cs, fs,8)  a'16( b, fs8) |
-  a'16( cs, fs,8)  gs'16( b, e,8)  gs'16( b, e,8) |
+  a'16( b, e,8)  gs'16( b, e,8)  gs'16( b, e,8) |
   g'16( b, e,8)  g'16( b, e,8)  g'16( a, e8) |
   g'16( a, d,8)  fs'16( a, d,8)  fs'16( a, d,8) |
   
