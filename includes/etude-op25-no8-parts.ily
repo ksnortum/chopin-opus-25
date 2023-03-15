@@ -31,7 +31,7 @@ rightHand = \relative {
     <af f'>8( <gf ef'> <af f'>  <gf ef'> <af f'> <gf ef'>  <f df'>-1-3 
       <gf ef'>-1-4 <g e'>-1-5  <bf gf'>-2-5 <af f'> <f df'>-3) |
     <g ef'>8(-1-4 <af f'>-2-5 <a fs'>-1-4  <bf g'>-2-5 <c af'>-1-4 <df bf'>-2-5
-      <d b'>-1-4 <gf ef'>-2-5 <e cs'>-1-4 <gf ef'>-2-5 <f df'>-1-4 
+      <d b'>-1-4 <ef c'>-2-5 <e cs'>-1-4 <gf ef'>-2-5 <f df'>-1-4 
       <c af'>-1-3) |
     <ef c'>8( <df bf'> <ef c'> <df bf'> <ef c'> <df bf'> <c af'>-1-3 
       <df bf'>-2-5 <bf gf'>-1-4  <c af'>-2-5 <af f'>-1-4 <bf gf'>) |
@@ -56,7 +56,7 @@ rightHand = \relative {
       <c af'> <df bf'> <c af'>  <df bf'> <c af'> <ef c'>) |
     <df bf'>8^( <ef c'> <df bf'>  <ef c'> <df bf'> <ef c'>  <c af'>-1-3_4_1
       <df bf'>-1-4_5_2 <d b'>-1-5_4_1  <f df'>-2-5_5_2 <ef c'> <c af'>) |
-    <df bf'>8^( <ef c'> <df bf'>  <ef c'> <df bf'> <ef c'>  <c af'> <df bf'>
+    <ef c'>8^( <df bf'> <ef c'>  <df bf'> <ef c'> <df bf'>  <c af'> <df bf'>
       <d b'>  <f df'> <ef c'> <c af'>) |
     <gf' ef'>8( <af ff'> <gf ef'>  <af ff'> <gf ef'> <af ff'>  <ff df'>-1-4
       <f d'>-2-5 <gf ef'>-1-4  <bff gf'>-2-5 <af ff'> <ff df'>-1-3) |
@@ -65,7 +65,7 @@ rightHand = \relative {
       
     \barNumberCheck 17
     <af ff'>8-2-5( <g ef'>-1-4 <bf g'>-2-5  <af f'> <c af'> <bf g'>  <df bf'>
-      <c af'> <df bf'>  <df bf'> <f df'> <ef c'> |
+      <c af'> <ef c'>  <df bf'> <f df'> <ef c'> |
     \ottava 1 <g ef'>8 <f df'> <af f'>  <g ef'> <bf g'> <af f'>  <c af'>
       <bf g'> <df bf'>  <c af'> <ef c'> <df bf'>-1-4 |
     <c af'>8-1-3 <df bf'>-2-5 <bf gf'>-1-4  <c af'>-2-5 <af f'>-1-4 <bf gf'>
@@ -123,7 +123,7 @@ leftHand = \relative {
       <af' ef'>( <c af'>) df,-.\noBeam <f df'>( <af f'>) |
     ef8-.\noBeam <g ef'>( <bf g'> <ef bf'> <bf g'> <g ef'>  <c af'> <af f'>
       <bf gf'> <gf ef'> <af f'> <f df'>) |
-    af,8-.\noBeam <c af'>( <ef c'>  <f ef'> <ef c'> <c af'>)  df,-.\noBeam
+    af,8-.\noBeam <c af'>( <ef c'>  <af ef'> <ef c'> <c af'>)  df,-.\noBeam
       <df' af'>( <f df'>  <df af'> <f df'> <df af'>) |
     af8-.\noBeam <c af'>( <ef c'>  <af ef'> <ef c'> <c af'>)  df,-.\noBeam
       <df' af'>( <f df'>  <df af'> <f df'> <df af'>) |
@@ -137,7 +137,7 @@ leftHand = \relative {
     bf,8-.\noBeam <f' df'>( <bf f'>  <df bf'> <bf f'> <f df'>)  f,8-.\noBeam
       <f' c'>( <a f'>  <c a'> <a f'> <f c'>) |
     gf,8-.\noBeam <df' bf'>( <gf df'>  <bf gf'> <gf df'> <df bf'>)  d,-.\noBeam
-      <d' af'>( <f cf'>  <af d> <f cf'> <df af'>) |
+      <d' af'>( <f cf'>  <af d> <f cf'> <d af'>) |
     ef,8-.\noBeam <ef' bf'>( <gf ef'>)  af,-.\noBeam <c af'>( <ef c'>)
       df,-.\noBeam <df' af'>( <f df'>)  bf,,-.\noBeam <bf' f'>( <df bf'>) |
     ef,8-.\noBeam <g ef'>( <bf g'>  <ef bf'> <bf g'> <g ef'>)  af,-.\noBeam

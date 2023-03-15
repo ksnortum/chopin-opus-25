@@ -217,7 +217,7 @@ rightHandUpper = \relative {
     g8 <b g'> cs  fs, <b fs'> cs  e, <b' e> cs |
     \stemUp
     e, <b' e> cs  e, <as e'> cs  e, <as e'> c |
-    e,8 <a e'> c  ds, <a' ds> gs  b, <ds b'> a') |
+    e,8 <a e'> c  ds, <a' ds> b  b, <ds b'> a') |
   }
   
   \barNumberCheck 81
@@ -291,7 +291,7 @@ rightHandUpper = \relative {
   R2. |
   \acciaccatura { <b,, e b'>8 } b''4-. \ottava 0 r r |
   R2. |
-  \acciaccatura { <b,, e b'>8 } b''4-. \ottava 0 r r |
+  \acciaccatura { <b,, fs' b>8 } b''4-. \ottava 0 r r |
   
   \barNumberCheck 129
   R2. |
@@ -484,7 +484,7 @@ leftHandUpper = \relative {
   d,8[ f' f, gs' gs, b'] |
   \acciaccatura { <bf, c g'>8 } bf,4-. r r |
   \acciaccatura { <b g' e'>8 } b,4-. r r\fermata |
-  \acciaccatura { <b' g' ds'>8 } b,4-. r r\fermata |
+  \acciaccatura { <b' fs' ds'>8 } b,4-. r r\fermata |
   \key e \major
   \voiceThree
   \shiftOff b''2( cs4 |
@@ -524,7 +524,7 @@ leftHandUpper = \relative {
   <b b'>2) r4 |
   
   \barNumberCheck 73
-  <gs, gs'>4 \clef treble <gs'' d' f b>\arpeggio( <g cs e as>\arpeggio) |
+  <b, b'>4 \clef treble <gs'' d' f b>\arpeggio( <g cs e as>\arpeggio) |
   \clef bass b,4-. <g' cs e>( <fs c' ds>) |
   <b,, b'>4-. \clef treble <fs'' c' ds a'>\arpeggio( <f b d gs>\arpeggio) |
   \clef bass b,4-. <f' b d>( <e b' cs>) |
@@ -693,7 +693,7 @@ leftHandLower = \relative {
   <ds' fs>2 d4\rest |
   cs,4 r r |
   bs'2 d,4\rest |
-  a4 r r |
+  a'4 r r |
   e2 r4 |
   s2. * 2 |
   
@@ -736,7 +736,7 @@ leftHandLower = \relative {
   e2. |
   \cadenzaOn s2. 
   \magnifyMusic #2/3 { 
-    e'4^( b' e gs b-1 \staffUp e fs gs-4 b-1 e fs gs-4 b-1 e fs gs2)^\fermata 
+    e4^( b' e gs b-1 \staffUp e fs gs-4 b-1 e fs gs-4 b-1 e fs gs2)^\fermata
   }
   \bar "|."
 }

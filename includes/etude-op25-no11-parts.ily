@@ -182,7 +182,7 @@ rightHand = \relative {
     \barNumberCheck 49
     cs16( gs b d, cs' gs  b-4 d-1 cs' gs b d-1 \ottava 1  
       cs'-4 gs b d,-1 cs-4 gs  \ottava 0 b d,-1 cs-4 gs b d,) |
-    d'16-5( g, c c, f'-5 c  ef g, af' ef g c,  c' g b e, bf'-3 g-2
+    d'16-5( g, c c, f'-5 c  ef g, af' ef g c,  c' g b ef, bf'-3 g-2
       a-5 ef-1 af-4 ef-2 g-3 c,-1) |
     f16-5( c ef gf,-1 f' c  ef-4 gf-1 f'-5 c ef gf-1  
       \ottava 1 f' c ef gf,-1 f-5 c  \ottava 0 ef gf, f c ds fs,) |
@@ -306,7 +306,7 @@ leftHand = \relative {
     <e c'>4) <a,, a'>4->( |
   \tupletDown
   <b b'>4) \clef treble \tuplet 3/2 { <gs'' b e>8-2( gs'-1 cs-1) } 
-    <b, ds cs' b>4 \clef bass <b, b'>4 |
+    <b, ds a' b>4 \clef bass <b, b'>4 |
   \tupletNeutral
   <e, e'>4 \tuplet 3/2 { <b'' gs'>8( <as fss'> <b gs'> } <e, gs e'>4-.) r |
   a,,4-. <a'' c e>8.( q16 q4 <a c f> |
@@ -424,7 +424,7 @@ leftHand = \relative {
   <gs gs'>4) \tuplet 3/2 { <g'' d'>8( <f d'> <e d'> } <e c'>4) <a,, a'>4->( |
   \tupletDown
   <b b'>4) \clef treble \tuplet 3/2 { <gs'' b e>8( gs' cs) } 
-    <b, ds cs' b>4 \clef bass <b, b'>4 |
+    <b, ds a' b>4 \clef bass <b, b'>4 |
   \tupletNeutral
   <e, e'>4 \tuplet 3/2 { <b'' gs'>8( <as fss'> <b gs'> } <e, gs e'>4-.) r |
   a,,4-. <a'' c e>8.( q16 q4 <a c f> |

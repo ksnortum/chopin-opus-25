@@ -272,8 +272,8 @@ leftHand = \relative {
     \tuplet 3/2 { cs16_2 b_1 a } |
   gs4.-3 gs8-3 \acciaccatura { b8 } a8. gs16-3 |
   gs4-1) fs,8.(\< cs'16  fs-1 gs-4 a b\! |
-  c16 gs-4 a b  cs a-4 as b) cs4~(_\diminMarkup |
-  cs16\pp b-3 d c  b-1 gs b-1 a  c-1 a e-4 c |
+  c16 gs-4 a b  c a-4 as b) c4~(_\diminMarkup |
+  c16\pp b-3 d c  b-1 gs b-1 a  c-1 a e-4 c |
   
   \barNumberCheck 17
   a'16-2 gs b-1 a  fs-3 es g fs  a-1 fs c-4 a-5) |

@@ -157,7 +157,7 @@ rightHandLower = \relative {
   \repeat unfold 3 {
     e8\rest <e g>  e\rest <f af> e\rest <e g> e\rest <f af> |
   }
-  g8\rest <e g> g\rest <f gs> g\rest <fs a> g\rest <e g> |
+  g8\rest <e g> g\rest <f gs> g\rest <fs a> g\rest <e gs> |
   g8\rest <e a> g\rest <a e'> g\rest <a d> g\rest <gs e'> |
   b8\rest <a e'>^. b\rest <c e> b\rest <c f> b\rest <b f'> |
   
@@ -254,7 +254,7 @@ leftHand = \relative {
   c,8-. <g' c>-. b,-. <af' d>-. c,-. <g' c>-. b,-. <af' df>-. |
   c,8-. <g' c>-. b,-. <gs' d'>-. b,-. <a' ds>-. e,-. <e' b' d>-. |
   a,8-. <e' c'>-. c-. <a' e'>-. b,-. <f' d'>-. e-. <b' e>-. |
-  c,8-. <a' e'>-. a,-. <a' e'>-. b,-. <f' d'>-. e-. <b' e>-. |
+  c,8-. <a' e'>-. a,-. <a' e'>-. d,-. <a' f'>-. d,-. <gs f'>-. |
   
   \barNumberCheck 41
   c,8-. <a' f'>-. c,-. <a' e'>-. b,-. <f' d'>-. e,-. <e' b' d>-. |
