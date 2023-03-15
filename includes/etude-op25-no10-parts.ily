@@ -208,7 +208,7 @@ rightHandUpper = \relative {
   <e e'>8( <fs fs'> <ds ds'> <e e'> <gs gs'> <fs fs'> |
   <e e'> <ds ds'> <cs cs'> <ds ds'> <e e'> <fs fs'>) |
   <gs gs'>8(-2-5 <fss fss'> <as as'> <gs gs'> q-3-5 <fss fss'> |
-  <g g'>8-2-5 <fs fs'> <a a'> <gs gs'> q-3-5 <fs fs'>-4 |
+  <g g'>8-2-5 <fs fs'> <a a'> <g g'> q-3-5 <fs fs'>-4 |
   <fs fs'> <f f'> q4 q8 <e e'> |
   <e e'>4 q8[ <ds ds'>] \acciaccatura { e'8 } <ds, ds'>8 <css css'>) |
   \revert Staff.Fingering.avoid-slur
@@ -428,7 +428,7 @@ rightHandLower = \relative {
       \override NoteColumn.force-hshift = -0.9 as2->
     }
     \new Voice { 
-      \voiceThree \override NoteColumn.force-hshift = -0.9 c4 s
+      \voiceThree \override NoteColumn.force-hshift = -0.9 cs4 s
     }
   >> 
     <es, gs>2-> |
@@ -491,7 +491,7 @@ leftHandUpper = \relative {
     <b b'>8 <as as'> <b b'>  <c c'> <cs cs'> <d d'>  
       <cs cs'> <c c'> <b b'>  <as as'> <b b'> <cs cs'> |
     <b b'>8 <as as'> <b b'>  <c f g c>^> <cs cs'> <d f g d'>^>
-      <cs cs'> <c c'> <b b'>  <as as'> <b b'> <gs b cs gs'>^> |
+      <cs cs'> <c c'> <b b'>  <as as'> <b b'> <g b cs g'>^> |
     <fs fs'>8 <es es'> <fs fs'>  <g g'> <fs fs'> <es es'>  
       <fs fs'> <g g'> <fs fs'>  <es es'> <fs fs'> <g g'> |
     \oneVoice
@@ -540,7 +540,7 @@ leftHandUpper = \relative {
   \oneVoice r4 \voiceFour <fs, e' as>^( <b ds b'> |
   \voiceThree <fs' a>4 gs) r |
   <a c>4( b) r |
-  <b d>4( cs8[ b ds8. cs16] |
+  <b d>4( cs8[ b d8. cs16] |
   cs8[ b as b] d8.) \oneVoice r16\fermata |
   s2. * 2 |
   
@@ -705,7 +705,7 @@ leftHandLower = \relative {
   es2.~ |
   es2~ es8. s16 |
   <e' g>4^1^2( <ds fs>8^1^3 <css es> <ds fs> <b d>^2^4 |
-  <cs e>4^1^3 <as cs>8^2^3 <gss bs>^2^4 <ass cs>^1^3 <fs a> |
+  <cs e>4^1^3 <as cs>8^2^3 <gss bs>^2^4 <as cs>^1^3 <fs a> |
   
   \barNumberCheck 49
   <bs, ds'>4 <cs cs'> <e g> |
@@ -731,7 +731,7 @@ leftHandLower = \relative {
   es2.~ |
   es2~ es8.) s16 |
   <e' g>4^1^2\slurShapeG ( <ds fs>8^1^3 <css es> <ds fs> <b d>^2^4 |
-  <cs e>4^1^3 <as cs>8^2^3 <gss bs>^2^4 <ass cs>^1^3 <fs a> |
+  <cs e>4^1^3 <as cs>8^2^3 <gss bs>^2^4 <as cs>^1^3 <fs a> |
   <bs, ds'>4 <cs cs'> <e g> |
   fs,4 b8) r r4 |
   a2 fs4 |
@@ -750,12 +750,12 @@ leftHandLower = \relative {
   \barNumberCheck 81
   s4 css8 ds e4 |
   s2.
-  bs2 b8( cs |
+  bs2 bs8( cs |
   css8 ds) r4 ds8( e |
   es2.~ |
   es2~ es8.) s16 |
   <e' g>4( <ds fs>8 <css es> <ds fs> <b d> |
-  <cs e>4 <as cs>8 <gss bs> <ass cs> <fs a> |
+  <cs e>4 <as cs>8 <gss bs> <as cs> <fs a> |
   
   \barNumberCheck 89
   <bs, ds'>4 <cs cs'> e) |
