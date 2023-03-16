@@ -213,7 +213,7 @@ rightHand = \relative {
   <f b>8-.) r r4 |
   \scaleDurations 2/3 {
     \ottava 1 b'16( f as d, a' f  gs d g d fs b,  \ottava 0 f' b, e gs, ds' b
-      d gs, cs gs c fs, |
+      d gs, cs gs c f, |
     b16 f as d, a' f  gs d g d fs b,
   }
   <gs d' f>8-.) r r4 |
