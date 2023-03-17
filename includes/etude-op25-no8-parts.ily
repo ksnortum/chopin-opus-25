@@ -98,7 +98,7 @@ rightHand = \relative {
     <ef cf'>8 <f df'> <ef cf'>  <f df'> <ef cf'> <cf af'>  <df bf'> <bf gf'>
       <df bf'>-2-5-\slurShapeB ^(  <c af'>-2-5) <gf ef'> <af f'>\) |
     <f df'>8(-1-4 <fs d'>-2-5 <g ef'>-1-4  <gs e'>-2-5 <a f'>-1-5 <as fs'>-2-4
-      <b g'>-1-5 <c af'>-1-4 <cs a'>-2-5  <df bf'>-1-4 <ds b'>-2-5 <e c'>-1-5 |
+      <b g'>-1-5 <c af'>-1-4 <cs a'>-2-5  <d bf'>-1-4 <ds b'>-2-5 <e c'>-1-5 |
     
     \barNumberCheck 33
     <f df'>8-1-4 <fs d'>-2-5 <g ef'>-1-4  <gs e'>-2-5 <a f'>-1-5 <as fs'>-2-4

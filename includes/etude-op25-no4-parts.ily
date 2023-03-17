@@ -198,7 +198,7 @@ rightHandLower = \relative {
 rightHand = <<
   \clef treble
   \global
-  \tempo "Agitato" 4 = 160
+  \tempo "Agitato" 4 = 120
   \new Voice \rightHandUpper
   \new Voice \rightHandLower
 >>
@@ -212,7 +212,7 @@ leftHand = \relative {
   c,8-. <a' f'>-. c,-. <a' e'>-. b,-. <f' d'>-. e,-. <e' b' d>-. |
   a,8-. <e' c'>-. b-. <e d'>-. c-. <e e'>-. a,-. <e' c'>-. |
   e,8-. <e' d'>-. a,-. <e' c'>-. b-. <e gs d'>-. a,-. <e' a c>-. |
-  e,8-. <e' gs d'>-. a,-. <e' a c>-.  b-. <e gs d'> a,-. <e' a c>-. |
+  e,8-. <e' gs d'>-. a,-. <e' a c>-.  b-. <e gs d'>-. a,-. <e' a c>-. |
   g,8-. <g' e'>-. a,-. <a' e'>-. b,-. <b' e>-. b,-. <b' ds>-. |
   e,8-. <b' e>-. ds,-. <c' fs>-. d,-. <b' f'>-. e,,-. <b'' e>-. |
   

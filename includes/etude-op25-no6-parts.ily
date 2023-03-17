@@ -111,9 +111,9 @@ rightHand = \relative {
   <b ds>16_1 <cs e>_2 <b ds>_1 <as css>-2-3  <b ds> <cs e> <b ds> <as css>
     <b ds> <cs e> <b ds> <as css>  <b ds>-1-4 <cs e>-2-5 <b ds>-1-4( 
     <as css>-2-4) |
-  <b ds>16 <cs e> <css es>-5 <ds fs>  <dss fss>_1 <e gs>_1 <fs a> <fss as>
-    <gs b> <gss bs>-5 <as cs> <ass css>_1  <b ds>_1 <cs e> <css es>-5 <ds fs> |
-  \ottava 1 <dss fss>16 <e gs> <fs a> <fss as>  <gs b>8\) \ottava 0 r r2 |
+  <b ds>16 <cs e> <css es>-5 <ds fs>  <dss fss>_1 <es gs>_1 <fs a> <fss as>
+    <gs b> <gss bs>-5 <as cs> <ass css>_1  <bs ds>_1 <cs e> <css es>-5 <ds fs> |
+  \ottava 1 <dss fss>16 <es gs> <fs a> <fss as>  <gs b>8\) \ottava 0 r r2 |
   <d, f>16-1-4( <e g>-2-5 \repeat unfold 7 { <d f> <e g> } |
   <d f>16_1 <e g>_2 <d f>_1 <cs e>-2-3
     \repeat unfold 3 { <d f> <e g> <d f> <cs e> } |
