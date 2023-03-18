@@ -4,7 +4,7 @@
 \include "includes/header-paper.ily"
 \include "includes/etude-op25-no11-parts.ily"
 
-% \noPointAndClick % <-- uncomment me for smaller PDF size
+% \pointAndClickOff % <-- uncomment me for smaller PDF size
 
 \etudeElevenMusic
 \etudeElevenMidi
