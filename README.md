@@ -17,13 +17,18 @@ LilyPond version 2.24.1 or higher.  It is assumed that `lilypond` is in the PATH
 
 The PDFs produced will have point-and-click info in them, which you may not want (it makes the file size much bigger).  To avoid this use the `-dno-point-and-click` command line option, or, if you're including globals, put `\noPointAndClick` in the source files.  This is explained in detail [here](https://lilypond.org/doc/v2.24/Documentation/usage/command_002dline-usage).
 
-For those who don't want to or can't compile the source files to PDFs, you can find them on [IMSLP](https://imslp.org) [here](https://imslp.org/wiki/%C3%89tudes%2C_Op.25_%28Chopin%2C_Fr%C3%A9d%C3%A9ric%29).  Search for "Knute Snortum" (near the bottom).
+For those who don't want to or can't compile the source files to PDFs, you can find them on [IMSLP](https://imslp.org) [here](https://imslp.org/wiki/%C3%89tudes%2C_Op.25_%28Chopin%2C_Fr%C3%A9d%C3%A9ric%29).  Search for "Knute Snortum" (near the bottom).  Unfortunately,
+there is no way to change the PDF files on IMSLP, so they will not have any proofreading corrections
+or other changes made here.
 
 ## Known problems
 When compiling `twelve-etudes-opus25-book.ly` or `etude-op25-no11-individual.ly` you will
 see errors in the output to the screen.  I have not been able to track down the cause but the PDF
 seems uneffected.  Strangely, if you comment out the `omit BarNumber` line in `header-paper.ily`,
 the problem goes away.
+
+## Thanks
+Thanks to [phmcarty](https://github.com/phmccarty) for all the proofreading.
 
 ## Licensing
 This work is licensed under CC BY-SA 4.0. To view a copy of this license, visit [http://creativecommons.org/licenses/by-sa/4.0/](http://creativecommons.org/licenses/by-sa/4.0/).
