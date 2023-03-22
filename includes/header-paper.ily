@@ -11,9 +11,11 @@
   maintainerEmail = "knute (at) snortum (dot) net"
   source = "https://vmirror.imslp.org/files/imglnks/usimg/d/de/IMSLP60298-PMLP01970-Chopin_Etudes_Schirmer_Mikuli_Op_25_filter.pdf"
   copyright = \markup { 
-    "This work is licensed under the" 
-    \with-url #"https://creativecommons.org/licenses/by-sa/4.0/" 
-    "Creative Commons Attribution-ShareAlike 4.0 License" 
+    \center-column {
+      "Copyright © 2023 Knute Snortum. This work is licensed under the" 
+      \with-url #"https://creativecommons.org/licenses/by-sa/4.0/" 
+      "Creative Commons Attribution-ShareAlike 4.0 International License."
+    }
   }
 }
 
