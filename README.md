@@ -17,7 +17,7 @@ LilyPond version 2.24.1 or higher.  It is assumed that `lilypond` is in the PATH
 
 The PDFs produced will have point-and-click info in them, which you may not want (it makes the file size much bigger).  To avoid this use the `-dno-point-and-click` command line option, or uncomment  `\pointAndClickOff` in the source files.  This is explained in detail [here](https://lilypond.org/doc/v2.24/Documentation/usage/command_002dline-usage).
 
-For those who don't want to or can't compile the source files to PDFs, you can find them on [IMSLP](https://imslp.org) [here](https://imslp.org/wiki/%C3%89tudes%2C_Op.25_%28Chopin%2C_Fr%C3%A9d%C3%A9ric%29).  Search for "Knute Snortum" (near the bottom).
+For those who don't want to or can't compile the source files to PDFs, you can find them on [IMSLP](https://imslp.org) [here](https://imslp.org/wiki/%C3%89tudes%2C_Op.25_%28Chopin%2C_Fr%C3%A9d%C3%A9ric%29).  Search for "Knute Snortum" (near the bottom). Or download the [latest release](https://github.com/ksnortum/chopin-opus-25/releases/tag/v0.1).
 
 ## Known problems
 When compiling `twelve-etudes-opus25-book.ly` or `etude-op25-no11-individual.ly` you will
