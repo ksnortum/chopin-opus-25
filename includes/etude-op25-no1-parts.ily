@@ -49,7 +49,7 @@ global = {
 rightHand = \relative ef'' {
   \clef treble
   \global
-  \tempo "Andante sostenuto" 4 = 104
+  \tempo "Allegro sostenuto" 4 = 104
 
   \partial 4 ef4( \noBreak
   \magnifyMusic #3/4 {
