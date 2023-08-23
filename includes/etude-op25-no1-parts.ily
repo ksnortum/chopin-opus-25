@@ -49,7 +49,7 @@ global = {
 rightHand = \relative ef'' {
   \clef treble
   \global
-  \tempo "Andante sostenuto" 4 = 104
+  \tempo "Allegro sostenuto" 4 = 104
 
   \partial 4 ef4( \noBreak
   \magnifyMusic #3/4 {
@@ -212,9 +212,9 @@ leftHand = \relative af,, {
         af, e' af c af e  af, e' af c af e |
       \nssl df,16 af'' df f df af  df, af' df f df af
         df, af' df f df af  df, g df' f df g, |
-      c,16 g' c f c g  c, g' c f c g
+      \nssl c,16 g' c f c g  c, g' c f c g
         c, g' c e c g  c, g' c e c g |
-      g,16 d' g b g d  g, d' g b g d
+      \nssl g,16 d' g b g d  g, d' g b g d
         g, d' g d' g, d  g, d' g d' g, d |
       \voiceThree
       \ns c,16 g' c g' c, g  c, g' c g' c, g
